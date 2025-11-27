@@ -1,16 +1,30 @@
 @import "tailwindcss";
 
-/* En v4, la fuente se configura diferente, pero por ahora mantén tu import */
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+/* Fuentes: Poppins para texto y Fira Code para títulos/código */
+@import url("https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DFira%2BCode:wght%40300%3B400%3B500%3B600%3B700%26family%3DPoppins:wght%40300%3B400%3B600%3B700%26display%3Dswap");
 
-/* Configuración del tema directamente en CSS (Nuevo en v4) */
+/* Colores y texto */
 @theme {
-  --color-brand-black: #050505;
-  --color-brand-cyan: #22d3ee;
-  --color-brand-purple: #a855f7;
+  --color-brand-black: #0a0a0f;
+  --color-brand-cyan: #5aefff;
+  --color-brand-purple: #8a2be2;
+  --color-brand-green: #39ff9b;
+  --color-text-subtitle: #e0e0e0;
+
   --font-mono: "Fira Code", monospace;
+  --font-sans: "Poppins", sans-serif;
 }
 
 body {
-  @apply bg-brand-black text-white font-mono;
+  /* Fondo y fuente de cuerpo Poppins */
+  @apply bg-brand-black text-white font-sans;
+}
+
+/* Fira Code en los títulos y código */
+h1,
+h2,
+h3,
+.font-mono,
+.terminal-area {
+  @apply font-mono;
 }
