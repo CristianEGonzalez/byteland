@@ -45,7 +45,7 @@ function Services() {
   ];
 
   return (
-    <div className="py-25 px-4 sm:px-6 lg:px-8">
+    <div className="py-35 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-mono text-white mb-10 text-center">
           Servicios
