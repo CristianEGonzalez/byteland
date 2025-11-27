@@ -1,12 +1,10 @@
-import cityLogo from '../assets/city.png';
-
 const Header = () => {
 return (
-    <header className="w-full bg-brand-black py-4 px-8 flex justify-between items-center border-b border-gray-900/50 font-mono">
+    <header className="w-full bg-brand-black py-2 px-4 pb-6 flex justify-between items-center border-b border-gray-900/50 font-mono">
       {/* Logo Area */}
-      <div className="flex items-center text-xl font-bold tracking-tighter">
+      <div className="flex items-center text-4xl tracking-tighter">
         <span className="text-cyan-400 mr-2">&gt;</span>
-        <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mr-8">
+        <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mr-12">
           ByteLand
         </span>
       </div>
@@ -17,7 +15,7 @@ return (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
-            className="text-gray-100 hover:text-cyan-400 transition-colors duration-300 text-base"
+            className="text-gray-100 hover:text-cyan-400 transition-colors duration-300 text-base mr-12"
           >
             {item}
           </a>
