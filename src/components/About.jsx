@@ -5,8 +5,8 @@ import cityLogo from "../assets/Byteland-city.png";
 function About() {
   return (
     <div
-      className="py-35 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-brand-black to-[#4E4E75]"
-      style={{ width: "100vw", marginLeft: "calc(50% - 50vw)" }}
+      className="py-35 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-brand-black to-[#4E4E75]"
+      style={{ width: "100%", marginLeft: "calc(50% - 50vw)" }}
     >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -15,7 +15,7 @@ function About() {
               Nosotros
             </h2>
 
-            <div className="mx-auto w-56 h-[6px] rounded-full bg-brand-purple mb-8"></div>
+            <div className="mx-auto w-56 h-1.5 rounded-full bg-brand-purple mb-8"></div>
 
             <img
               src={cityLogo}
