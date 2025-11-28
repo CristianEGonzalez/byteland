@@ -11,8 +11,6 @@ const Hero = () => {
     <section
       className="relative w-full min-h-[90vh] flex items-center justify-center px-4 py-12 lg:px-8"
       style={{
-        width: "100vw",
-        marginLeft: "calc(50% - 50vw)",
         backgroundColor: "#0A0A0F",
         backgroundImage: `url('${fondo}')`,
         backgroundSize: "cover",
