@@ -1,6 +1,6 @@
 const Header = () => {
 return (
-    <header className="w-full bg-brand-black py-2 px-4 pb-6 flex justify-between items-center border-b border-gray-900/50 font-mono">
+    <header className="sticky top-0 z-100 w-full bg-brand-black py-3 px-4 pb-3 flex justify-between items-center border-b border-gray-900/50 font-mono">
       {/* Logo Area */}
       <div className="flex items-center text-4xl tracking-tighter">
         <span className="text-cyan-400 mr-2">&gt;</span>
@@ -10,7 +10,7 @@ return (
       </div>
 
       {/* Navigation Links */}
-      <nav className="hidden md:flex items-center gap-8">
+      <nav className="hidden md:flex items-center ">
         {['Servicios', 'Proyectos', 'Nosotros'].map((item) => (
           <a
             key={item}

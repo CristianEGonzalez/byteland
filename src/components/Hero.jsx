@@ -62,7 +62,7 @@ const Hero = () => {
         {/* === COLUMNA DERECHA === */}
         <div className="flex flex-col gap-8 items-center lg:items-start">
           {/* Tarjeta de Código (Terminal) */}
-          <div className="w-full lg:max-w-[500px] bg-gradient-to-br from-[#272731]/10 to-[#787897]/30 backdrop-blur-md border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl font-mono text-xs sm:text-sm text-gray-300 relative">
+          <div className="w-full lg:max-w-[500px] bg-linear-to-br from-[#272731]/10 to-[#787897]/30 backdrop-blur-md border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl font-mono text-xs sm:text-sm text-gray-300 relative">
             {/* Botones de ventana (decorativo) */}
             <div className="flex gap-2 mb-3 sm:mb-4">
               <div className="w-3 h-3 rounded-full bg-red-500"></div>
