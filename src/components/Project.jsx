@@ -6,42 +6,48 @@ function Projects() {
   const proyectos = [
     {
       id: 1,
-      titulo: "Landing page - PoolClean",
-      descripcion: "Sitio web para mantenimiento de piscinas.",
+      titulo: "Landing Page - PoolClean",
+      descripcion: "Sitio web optimizado para servicios de mantenimiento de piscinas.",
       imagen: poolclean,
       link: "https://poolclean.com.ar/",
+      tags: ["React", "Tailwind"] // Opcional: Agregué tags tech visuales, tenemos que definir los correctos
     },
     {
       id: 2,
-      titulo: "Menú digital - OldSpringfield",
-      descripcion: "Sitio web para menú digital de una hamburguesería.",
+      titulo: "Menú Digital - OldSpringfield",
+      descripcion: "Catálogo interactivo con QR para una hamburguesería moderna.",
       imagen: oldspringfield,
       link: "https://menu-digital-template.netlify.app/",
+      tags: ["JS", "CSS Grid"] // Opcional: Agregué tags tech visuales, tenemos que definir los correctos
     },
     {
       id: 3,
-      titulo: "Aplicación web - MedIntegral",
-      descripcion: "Sitio web administrativo para manejar una obra social.",
+      titulo: "App Web - MedIntegral",
+      descripcion: "Panel administrativo completo para gestión de obras sociales.",
       imagen: medintegral,
       link: "https://medintegral.vmdigitai.com/",
+      tags: ["Dashboard", "Data"] // Opcional: Agregué tags tech visuales, tenemos que definir los correctos
     },
   ];
 
   return (
-    <section className="w-full flex flex-col items-center mt-16 px-4">
-      <div className="w-[95%] max-w-5xl border border-white/30 rounded-2xl py-4 px-6 mb-4">
-        <h2 className="text-4xl font-mono font-bold text-center">
+    <section id="proyectos" className="relative w-full py-24 px-4 sm:px-6 lg:px-8">
+      
+      {/* Header de Sección Consistente */}
+      <div className="max-w-7xl mx-auto mb-16 text-center">
+        <h2 className="text-4xl lg:text-5xl font-orbitron font-bold mb-4">
           <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
-            Proyectos
+            Proyectos Destacados
           </span>
+          <span className="text-brand-cyan animate-pulse">_</span>
         </h2>
+        <p className="text-gray-400 font-mono text-sm max-w-2xl mx-auto">
+          // Casos de éxito y soluciones implementadas por ByteLand
+        </p>
       </div>
 
-      <p className="text-text-subtitle text-center font-sans mb-10">
-        Sitios web realizados por ByteLand
-      </p>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center w-full max-w-7xl">
+      {/* Grid de Proyectos */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto place-items-center">
         {proyectos.map((pro) => (
           <ProjectCard key={pro.id} pro={pro} />
         ))}
@@ -52,41 +58,54 @@ function Projects() {
 
 function ProjectCard({ pro }) {
   return (
-    <div className="flex flex-col items-center w-full pb-20">
-      <div
-        className="bg-brand-black rounded-3xl shadow-lg overflow-hidden border border-white/10 
-                      w-full h-full flex flex-col"
-      >
-        <div className="h-48 w-full overflow-hidden relative">
-          <img
-            src={pro.imagen}
-            alt={pro.titulo}
-            className="w-full h-full object-cover"
-          />
-
-          <div className="absolute inset-0 bg-black/50"></div>
+    <article className="group relative flex flex-col w-full h-full max-w-sm bg-gray-900/40 backdrop-blur-md border border-white/10 rounded-2xl overflow-hidden hover:border-brand-purple/50 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_rgba(168,85,247,0.15)]">
+      
+      {/* Área de Imagen con Efecto Zoom */}
+      <div className="h-48 w-full overflow-hidden relative border-b border-white/5">
+        <img
+          src={pro.imagen}
+          alt={`Captura de pantalla de ${pro.titulo}`}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
         
-        </div>
-
-        <div className="p-4 flex flex-col grow">
-          <p className="font-mono text-base font-semibold text-left mb-2">
-            {pro.titulo}
-          </p>
-
-          <p className="text-text-subtitle text-sm font-sans text-left grow">
-            {pro.descripcion}
-          </p>
+        {/* Overlay al hover */}
+        <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+        
+        {/* Tags flotantes (Detalle tech) */}
+        <div className="absolute bottom-3 left-3 flex gap-2">
+           {pro.tags?.map(tag => (
+             <span key={tag} className="text-[10px] font-mono bg-black/70 text-brand-cyan px-2 py-1 rounded border border-brand-cyan/30 backdrop-blur-sm">
+               {tag}
+             </span>
+           ))}
         </div>
       </div>
 
-      <a
-        href={pro.link}
-        target="_blank"
-        className="mt-4 px-6 py-2 border border-white/30 rounded-xl font-mono text-sm hover:bg-white/10 transition"
-      >
-        DEMO
-      </a>
-    </div>
+      {/* Contenido de la Tarjeta */}
+      <div className="p-6 flex flex-col grow">
+        <h3 className="font-orbitron text-lg font-bold text-white mb-2 group-hover:text-brand-cyan transition-colors">
+          {pro.titulo}
+        </h3>
+
+        <p className="text-gray-400 text-sm font-mono mb-6 leading-relaxed grow">
+          {pro.descripcion}
+        </p>
+
+        {/* Botón Integrado (Call To Action) */}
+        <a
+          href={pro.link}
+          target="_blank"
+          rel="noopener noreferrer" // Seguridad obligatoria para target blank
+          className="w-full text-center py-2.5 rounded-lg font-mono text-sm font-bold 
+                     bg-white/5 border border-white/10 text-white 
+                     hover:bg-brand-purple hover:border-brand-purple hover:text-black hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]
+                     transition-all duration-300 flex items-center justify-center gap-2 group/btn"
+        >
+          <span>VER DEMO</span>
+          <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+        </a>
+      </div>
+    </article>
   );
 }
 
