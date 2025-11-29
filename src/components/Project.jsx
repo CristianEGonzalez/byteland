@@ -52,7 +52,7 @@ function Projects() {
 
 function ProjectCard({ pro }) {
   return (
-    <div className="flex flex-col items-center w-full">
+    <div className="flex flex-col items-center w-full pb-20">
       <div
         className="bg-brand-black rounded-3xl shadow-lg overflow-hidden border border-white/10 
                       w-full h-full flex flex-col"
