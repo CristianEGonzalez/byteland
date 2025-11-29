@@ -4,7 +4,7 @@ return (
       {/* Logo Area */}
       <div className="flex items-center text-4xl tracking-tighter">
         <span className="text-cyan-400 mr-2">&gt;</span>
-        <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mr-12">
+        <span className="font-orbitron font-bold bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mr-12">
           ByteLand
         </span>
       </div>
