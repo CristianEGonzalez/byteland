@@ -4,8 +4,17 @@ function WhyChoose() {
       <div className="text-3xl font-bold text-white font-mono text-center mt-15 p-25 w-full">
         ¿Por qué elegir ByteLand?
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-10 lg:gap-5 px-4 sm:px-6 lg:px-8 pb-20 mb-32 place-items-stretch">
-        <div className="flex flex-row sm:flex-row md:flex-col items-center md:items-center gap-4 h-full">
+      <div className="relative grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-10 lg:gap-2 px-4 sm:px-6 lg:px-25 pb-20 mb-32 place-items-stretch">
+        <div
+          className="hidden md:block absolute h-1 bg-white z-0"
+          style={{
+            top: "calc(14% + 14px)",
+            left: "10%",
+            width: "calc(45% + 35%)",
+          }}
+        ></div>
+
+        <div className="flex flex-row sm:flex-row md:flex-col items-center md:items-center gap-4 h-full relative z-10">
           <div className="w-30 h-30 sm:w-28 sm:h-28 bg-[#D9D9D9] rounded-full flex items-center justify-center shrink-0">
             <div className="w-26 h-26 sm:w-24 sm:h-24 bg-black rounded-full flex items-center justify-center border-4 border-purple-700">
               <p className="text-white text-2xl font-bold font-mono">01</p>
@@ -24,7 +33,7 @@ function WhyChoose() {
           </div>
         </div>
 
-        <div className="flex flex-row sm:flex-row md:flex-col items-center md:items-center gap-4 h-full">
+        <div className="flex flex-row sm:flex-row md:flex-col items-center md:items-center gap-4 h-full relative z-10">
           <div className="w-30 h-30 sm:w-28 sm:h-28 bg-[#D9D9D9] rounded-full flex items-center justify-center shrink-0">
             <div className="w-26 h-26 sm:w-24 sm:h-24 bg-black rounded-full flex items-center justify-center border-4 border-purple-700">
               <p className="text-white text-2xl font-bold font-mono">02</p>
@@ -42,7 +51,7 @@ function WhyChoose() {
           </div>
         </div>
 
-        <div className="flex flex-row sm:flex-row md:flex-col items-center md:items-center gap-4 h-full">
+        <div className="flex flex-row sm:flex-row md:flex-col items-center md:items-center gap-4 h-full relative z-10">
           <div className="w-30 h-30 sm:w-28 sm:h-28 bg-[#D9D9D9] rounded-full flex items-center justify-center shrink-0">
             <div className="w-26 h-26 sm:w-24 sm:h-24 bg-black rounded-full flex items-center justify-center border-4 border-purple-700">
               <p className="text-white text-2xl font-bold font-mono">03</p>
