@@ -16,7 +16,7 @@ function Projects() {
       titulo: "Menú digital - OldSpringfield",
       descripcion: "Sitio web para menú digital de una hamburguesería.",
       imagen: oldspringfield,
-      link: "#",
+      link: "https://menu-digital-template.netlify.app/",
     },
     {
       id: 3,
@@ -31,7 +31,7 @@ function Projects() {
     <section className="w-full flex flex-col items-center mt-16 px-4">
       <div className="w-[95%] max-w-5xl border border-white/30 rounded-2xl py-4 px-6 mb-4">
         <h2 className="text-4xl font-mono font-bold text-center">
-          <span className="bg-gradient-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
             Proyectos
           </span>
         </h2>
@@ -68,12 +68,12 @@ function ProjectCard({ pro }) {
         
         </div>
 
-        <div className="p-4 flex flex-col flex-grow">
+        <div className="p-4 flex flex-col grow">
           <p className="font-mono text-base font-semibold text-left mb-2">
             {pro.titulo}
           </p>
 
-          <p className="text-text-subtitle text-sm font-sans text-left flex-grow">
+          <p className="text-text-subtitle text-sm font-sans text-left grow">
             {pro.descripcion}
           </p>
         </div>

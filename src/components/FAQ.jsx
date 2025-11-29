@@ -62,8 +62,8 @@ const QuestionCard = ({ pregunta }) => {
 
   return (
     <div className="relative flex items-center gap-10">
-      <div className="flex-shrink-0">
-        <div className="p-[2.5px] rounded-full bg-gradient-to-br from-brand-cyan via-brand-purple to-brand-green">
+      <div className="shrink-0">
+        <div className="p-[2.5px] rounded-full bg-linear-to-br from-brand-cyan via-brand-purple to-brand-green">
           <div className="w-12 h-12 rounded-full bg-brand-black flex items-center justify-center">
             <p className="text-white text-lg font-bold font-mono">
               {pregunta.id}

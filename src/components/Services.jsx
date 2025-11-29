@@ -62,9 +62,9 @@ function Services() {
 
 const ServicesCard = ({ servicio }) => {
   return (
-    <div className="bg-gradient-to-br from-[#272731]/5 to-[#787897]/10 border border-white/30 rounded-[15px] p-8 shadow-lg hover:shadow-xl transition-shadow">
-      <div className="text-4xl mb-3 text-[#39ff9b]">{servicio.icono}</div>
-      <h3 className="text-xl text-[#39ff9b] font-semibold mb-2">
+    <div className="bg-linear-to-br from-[#272731]/5 to-[#787897]/10 border border-white/30 rounded-[15px] p-8 shadow-lg hover:shadow-xl transition-shadow">
+      <div className="text-4xl mb-3 text-brand-green">{servicio.icono}</div>
+      <h3 className="text-xl text-brand-green font-semibold mb-2">
         {servicio.nombre}
       </h3>
       <p className="text-gray-400 text-sm">{servicio.descripcion}</p>
