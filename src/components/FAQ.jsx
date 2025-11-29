@@ -1,105 +1,120 @@
 import { useState } from "react";
 import fondoFAQ from "../assets/fondoFAQ3.jpg";
 
-function Question() {
+function FAQ() {
   const preguntas = [
     {
-      id: 1,
-      pregunta: "¿Cómo puedo encargar un sitio web con ByteLand?",
-      respuesta:
-        "Podes contactarnos a través de nuestro formulario en línea, correo electrónico o teléfono para discutir tus necesidades y comenzar el proceso.",
+      id: "01", // Cambié a string para estilo visual "01"
+      pregunta: "¿Cómo puedo encargar un sitio web?",
+      respuesta: "Podes contactarnos a través de nuestro formulario en línea, correo electrónico o redes sociales para discutir tus necesidades y comenzar el proceso de transformación digital.",
     },
     {
-      id: 2,
-      pregunta: "¿Qué información necesitan para comenzar con mi sitio web?",
-      respuesta:
-        "Necesitaremos detalles sobre tu negocio, objetivos del sitio web, contenido (textos e imágenes) y cualquier preferencia de diseño que tengas.",
+      id: "02",
+      pregunta: "¿Qué información necesitan para comenzar?",
+      respuesta: "Necesitaremos detalles sobre tu negocio, objetivos del sitio, contenido base (textos e imágenes) y referencias visuales de estilos que te gusten.",
     },
     {
-      id: 3,
-      pregunta: "¿Cuáles son las tarifas que ofrecen para cada servicio?",
-      respuesta:
-        "Nuestras tarifas varían según el tipo y la complejidad del sitio web. Contáctanos para una cotización personalizada.",
+      id: "03",
+      pregunta: "¿Cuáles son las tarifas?",
+      respuesta: "Nuestras tarifas varían según la complejidad del desarrollo. Contáctanos para recibir una cotización personalizada sin cargo.",
     },
     {
-      id: 4,
-      pregunta: "¿Ofrecen soporte después del lanzamiento del sitio web?",
-      respuesta:
-        "Sí, ofrecemos servicios de mantenimiento y soporte para asegurar que tu sitio web funcione correctamente después del lanzamiento.",
+      id: "04",
+      pregunta: "¿Ofrecen soporte post-lanzamiento?",
+      respuesta: "Sí, ofrecemos planes de mantenimiento mensual que incluyen monitoreo, actualizaciones de seguridad y pequeños ajustes para que tu web siempre vuele.",
     },
   ];
 
   return (
     <section
-      className="relative w-full min-h-[90vh] flex flex-col items-center justify-start px-4 lg:px-8 pt-24 py-20"
-      style={{
-        backgroundColor: "#0A0A0F",
-        backgroundImage: `url('${fondoFAQ}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
+      id="faq"
+      className="relative w-full py-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-black/60 z-0" />
+      {/* FONDO: Imagen con superposición oscura */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url(${fondoFAQ})` }}
+      ></div>
+      {/* Gradiente para fundir la imagen con el negro de la web */}
+      <div className="absolute inset-0 z-0 bg-linear-to-b from-brand-black/90 via-brand-black/80 to-brand-black"></div>
 
-      <h2 className="text-4xl font-mono font-bold text-center z-10">
-        Preguntas Frecuentes
-      </h2>
+      <div className="relative z-10 max-w-4xl mx-auto">
+        
+        {/* HEADER DE SECCIÓN */}
+        <header className="mb-16 text-center">
+          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-white mb-4">
+            Preguntas <span className="text-brand-purple">Frecuentes</span>
+          </h2>
+          <div className="h-1 w-24 bg-brand-purple mx-auto rounded-full shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
+        </header>
 
-      <div className="w-40 h-1 bg-brand-purple rounded-full mt-3 mb-10 z-10"></div>
-
-      <div className="w-full max-w-4xl space-y-10">
-        {preguntas.map((pregunta) => (
-          <QuestionCard key={pregunta.id} pregunta={pregunta} />
-        ))}
+        {/* LISTA DE DEFINICIONES */}
+        <dl className="space-y-6">
+          {preguntas.map((pregunta) => (
+            <FAQCard key={pregunta.id} data={pregunta} />
+          ))}
+        </dl>
       </div>
     </section>
   );
 }
 
-const QuestionCard = ({ pregunta }) => {
-  const [open, setOpen] = useState(false);
+const FAQCard = ({ data }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="relative flex items-center gap-10">
-      <div className="shrink-0">
-        <div className="p-[2.5px] rounded-full bg-linear-to-br from-brand-cyan via-brand-purple to-brand-green">
-          <div className="w-12 h-12 rounded-full bg-brand-black flex items-center justify-center">
-            <p className="text-white text-lg font-bold font-mono">
-              {pregunta.id}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex-1">
-        <div className="bg-white/5 border border-white/30 rounded-2xl p-5 backdrop-blur-sm hover:bg-white/10 transition">
+    <div className="group">
+      <div 
+        className={`relative bg-gray-900/40 backdrop-blur-md border rounded-2xl overflow-hidden transition-all duration-300 
+        ${isOpen ? 'border-brand-purple shadow-[0_0_20px_rgba(168,85,247,0.15)]' : 'border-white/10 hover:border-brand-purple/50'}`}
+      >
+        
+        {/* PREGUNTA (DT) */}
+        <dt>
           <button
-            onClick={() => setOpen(!open)}
-            className="w-full flex justify-between items-center"
+            onClick={() => setIsOpen(!isOpen)}
+            className="w-full flex items-center gap-6 p-6 text-left focus:outline-none"
+            aria-expanded={isOpen}
+            aria-controls={`answer-${data.id}`}
           >
-            <h3 className="text-xl font-regular">{pregunta.pregunta}</h3>
+            {/* NÚMERO (Decorativo) */}
+            <div className="shrink-0 hidden sm:flex">
+              <div className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300
+                ${isOpen ? 'bg-brand-purple/20 border-brand-purple text-brand-purple' : 'bg-black/50 border-white/20 text-gray-500 group-hover:border-brand-purple/50'}`}>
+                <span className="font-mono font-bold">{data.id}</span>
+              </div>
+            </div>
 
-            <div
-              className={`transform transition-transform duration-300 ${
-                open ? "rotate-180" : ""
-              }`}
-            >
-              <div className="w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-white"></div>
+            {/* TEXTO PREGUNTA */}
+            <span className={`grow text-lg font-orbitron font-medium transition-colors ${isOpen ? 'text-white' : 'text-gray-300 group-hover:text-white'}`}>
+              {data.pregunta}
+            </span>
+
+            {/* ICONO CHEVRON */}
+            <div className={`shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand-purple' : 'text-gray-500'}`}>
+              {/* SVG Chevron simple */}
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
             </div>
           </button>
+        </dt>
 
-          <div
-            className={`overflow-hidden transition-all duration-300 ${
-              open ? "max-h-40 mt-3" : "max-h-0"
-            }`}
-          >
-            <p className="text-text-subtitle text-left">{pregunta.respuesta}</p>
+        {/* RESPUESTA (DD) */}
+        <dd 
+          id={`answer-${data.id}`}
+          className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-40 opacity-100' : 'max-h-0 opacity-0'}`}
+        >
+          <div className="p-6 pt-0 pl-6 sm:pl-22">
+            <p className="font-mono text-gray-400 text-sm leading-relaxed border-l-2 border-brand-cyan/30 pl-4">
+              {data.respuesta}
+            </p>
           </div>
-        </div>
+        </dd>
+
       </div>
     </div>
   );
 };
 
-export default Question;
+export default FAQ;

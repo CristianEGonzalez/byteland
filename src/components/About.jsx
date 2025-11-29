@@ -1,48 +1,71 @@
-import React from "react";
 import Button from "./Button";
 import cityLogo from "../assets/BytelandCity.png";
 
 function About() {
   return (
-    <div
-      className="py-35 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-brand-black to-[#4E4E75]"
-      style={{ width: "100%", marginLeft: "calc(50% - 50vw)" }}
+    <section 
+      id="nosotros" 
+      className="relative w-full py-24 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-brand-black via-[#0a0a0a] to-[#1a1a2e] overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div className="flex flex-col items-center md:items-start">
-            <h2 className="text-4xl font-bold text-white font-mono text-center mb-2 w-full">
-              Nosotros
-            </h2>
+      {/* Decoración de fondo de la ciudad: Un haz de luz sutil */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-brand-purple/10 blur-[120px] rounded-full pointer-events-none" aria-hidden="true"></div>
 
-            <div className="mx-auto w-56 h-1.5 rounded-full bg-brand-purple mb-8"></div>
-
-            <img
-              src={cityLogo}
-              alt="Byteland City Logo"
-              className="h-auto object-contain mb-8 border-white/30 rounded-xl shadow-lg"
-            />
-          </div>
-
-          <div className="flex flex-col justify-start pt-24">
-            <p className="text-text-subtitle text-lg font-semibold font-sans text-left mb-10">
-              En ByteLand somos un equipo de desarrolladores y diseñadores
-              profesionales, con una visión clara: transformar ideas en
-              experiencias digitales impactantes. 
-            </p>
-            <p className="text-text-subtitle text-lg font-semibold font-sans text-left mb-10">
-              Nos dedicamos a crear soluciones web que no solo cumplan, sino que superen las
-              expectativas de nuestros clientes, impulsando su presencia online
-              con una identidad única.
-            </p>
-
-            <div className="flex justify-center">
-              <Button nombre="Contactanos" />
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          
+          {/* City Logo*/}
+          <div className="flex flex-col items-center group">
+             {/* Imagen con efecto de flotación y brillo */}
+            <div className="relative">
+              {/* Brillo trasero */}
+              <div className="absolute inset-0 bg-brand-cyan/20 blur-3xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
+              
+              <img
+                src={cityLogo}
+                alt="Ilustración de la ciudad digital de Byteland"
+                className="relative h-auto w-full max-w-md object-contain drop-shadow-[0_0_15px_rgba(34,211,238,0.3)] transform transition-transform duration-700 group-hover:scale-105"
+              />
             </div>
           </div>
+
+          {/* Texto Sobre Nosotros */}
+          <article className="flex flex-col justify-start">
+            
+            <header className="mb-8">
+              <h2 className="text-4xl lg:text-5xl font-orbitron font-bold text-white mb-4">
+                Sobre <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple">Nosotros</span>
+              </h2>
+              {/* Línea decorativa estilo tech */}
+              <div className="h-1 w-32 bg-linear-to-r from-brand-cyan to-transparent rounded-full"></div>
+            </header>
+
+            {/* Texto con mejor legibilidad y fuente mono */}
+            <div className="space-y-6 font-mono text-gray-300 text-lg leading-relaxed">
+              <p>
+                En <strong className="text-white">ByteLand</strong> somos un equipo de desarrolladores y diseñadores
+                profesionales con una visión clara: <span className="text-brand-cyan">transformar ideas en experiencias digitales impactantes.</span>
+              </p>
+              
+              <p>
+                Nos dedicamos a crear soluciones web que no solo cumplan, sino que 
+                <span className="italic text-brand-purple"> superen las expectativas</span> de nuestros clientes, 
+                impulsando su presencia online con una identidad única.
+              </p>
+            </div>
+
+            {/* Botón de acción */}
+            <div className="mt-10 flex w-full justify-center">
+               <div className="hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all">
+                  <Button nombre="Contactanos" />
+               </div>
+            </div>
+
+          </article>
+
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
