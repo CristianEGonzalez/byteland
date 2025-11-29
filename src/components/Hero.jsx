@@ -1,4 +1,4 @@
-import cityLogo from "../assets/Byteland-city.png";
+import cityLogo from "../assets/BytelandCity.png";
 import fondo from "../assets/galaxy.jpg";
 
 const Hero = () => {
