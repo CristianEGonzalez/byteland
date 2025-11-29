@@ -2,96 +2,111 @@ import cityLogo from "../assets/BytelandCity.png";
 import fondo from "../assets/galaxy.jpg";
 
 const Hero = () => {
-  const heroCardGradient =
-    "bg-gradient-to-br from-[#272731]/20 to-[#787897]/40";
-
-  const buttonGradientClasses = `bg-gradient-to-r from-[#5AEFFF] to-[#8A2BE2]`;
-
   return (
     <section
-      className="relative w-full min-h-[90vh] flex items-center justify-center px-4 py-12 lg:px-8"
-      style={{
-        backgroundColor: "#0A0A0F",
-        backgroundImage: `url('${fondo}')`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
+      id="inicio"
+      className="relative w-full min-h-[90vh] flex items-center justify-center px-4 py-12 lg:px-8 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-black/80 z-0" />
+      {/* FONDO */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+        style={{ backgroundImage: `url('${fondo}')` }}
+      />
+      <div className="absolute inset-0 z-0 bg-linear-to-b from-black/70 via-black/80 to-[#020202]" />
 
-      {/* Contenedor Principal (Grid) */}
-      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-16 max-w-7xl w-full px-4 lg:px-8 z-10">
-        {/* === TARJETA IZQUIERDA (Principal) === */}
-        <div
-          className={`${heroCardGradient} border border-white/30 rounded-[25px] 
-          p-8  lg:p-12 relative overflow-hidden group text-left`}
-        >
-          {/* Etiqueta superior */}
-          <div className="font-mono text-[#5AEFFF] text-xs sm:text-sm mb-4 sm:mb-6 tracking-wide">
-            &lt; diseño - desarrollo - producción /&gt;
-          </div>
+      {/* Contenedor Principal */}
+      <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl w-full z-10 items-center">
+        
+        {/* Tarjeta Principal */}
+        <div className="group relative">
+          <div className="absolute -inset-1 bg-linear-to-r from-brand-cyan to-brand-purple rounded-[30px] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
 
-          {/* Título Principal */}
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-mono text-white leading-tight mb-4">
-            Construimos la web que tu marca necesita
-            <span>/&gt;</span>
-          </h1>
+          <article
+            className="relative bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-[25px] 
+            p-8 lg:p-12 text-left shadow-2xl overflow-hidden"
+          >
+            <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
 
-          {/* Subtítulo */}
-          <p className="text-gray-400 text-base sm:text-lg mb-8 sm:mb-10 font-light">
-            Confiabilidad asegurada para tu empresa
-          </p>
+            <small className="inline-block font-mono text-brand-cyan text-xs sm:text-sm mb-6 tracking-wider bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">
+              &lt; diseño - desarrollo - producción /&gt;
+            </small>
 
-          {/* Botones */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <button
-              className={`${buttonGradientClasses} text-black font-bold py-1 px-8 rounded-lg text-sm sm:text-base hover:shadow-[0_0_20px_rgba(90,239,255,0.8)] transition-all hover:scale-[1.03] w-full sm:w-auto`}
-            >
-              Ver servicios
-            </button>
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-orbitron font-bold text-white leading-tight mb-6">
+              Construimos la web que tu marca <br className="hidden"/>
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple animate-pulse">
+                 necesita
+              </span>
+            </h1>
 
-            <button className="bg-transparent border border-gray-600 text-white font-bold py-2 px-8 rounded-lg text-sm sm:text-base hover:bg-white/10 hover:border-[#5AEFFF] transition-all w-full sm:w-auto">
-              Contactar
-            </button>
-          </div>
+            <p className="text-gray-300 font-mono text-base sm:text-lg mb-10 leading-relaxed max-w-lg">
+              Confiabilidad asegurada para tu empresa. Transformamos código en resultados de negocio.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a 
+                href="#servicios"
+                className="bg-linear-to-r from-brand-cyan to-brand-purple text-black font-bold py-3 px-8 rounded-xl text-center hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all transform hover:scale-105"
+              >
+                Ver servicios
+              </a>
+
+              <a 
+                href="#contacto" 
+                className="bg-white/5 border border-white/20 text-white font-bold py-3 px-8 rounded-xl text-center hover:bg-white/10 hover:border-brand-purple hover:text-brand-purple transition-all backdrop-blur-md"
+              >
+                Contactar
+              </a>
+            </div>
+          </article>
         </div>
 
-        {/* === COLUMNA DERECHA === */}
-        <div className="flex flex-col gap-8 items-center lg:items-start">
-          {/* Tarjeta de Código (Terminal) */}
-          <div className="w-full lg:max-w-[500px] bg-linear-to-br from-[#272731]/10 to-[#787897]/30 backdrop-blur-md border border-gray-800 rounded-xl p-4 sm:p-6 shadow-xl font-mono text-xs sm:text-sm text-gray-300 relative">
-            {/* Botones de ventana (decorativo) */}
-            <div className="flex gap-2 mb-3 sm:mb-4">
-              <div className="w-3 h-3 rounded-full bg-red-500"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500"></div>
+        {/* Visuales */}
+        <div className="flex flex-col gap-12 items-center w-full mt-12 lg:mt-0">
+          
+          {/* Terminal Flotante */}
+          <div
+            role="presentation"
+            className="w-full max-w-md bg-black/80 backdrop-blur-md border border-gray-700 rounded-xl p-6 shadow-2xl font-mono text-sm text-gray-300 relative z-20 border-l-4 border-l-brand-purple"
+          >
+            <div className="flex justify-between items-center mb-4 border-b border-gray-800 pb-2">
+              <span className="text-xs text-gray-500">bash — 80x24</span>
+              <div className="flex gap-2">
+                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
+              </div>
             </div>
 
-            <div className="space-y-1">
-              <p>
-                <span className="text-[#8A2BE2]">$</span> git clone
-                https://byteland/template
-              </p>
-              <p>
-                <span className="text-[#8A2BE2]">$</span> npm run dev
-              </p>
-              <p className="text-green-400 pt-2">
-                &gt; Ready on http://localhost:3000 🚀
-              </p>
+            <div className="space-y-3 font-mono text-xs sm:text-sm">
+              <div className="flex">
+                <span className="text-brand-purple mr-2 select-none">$</span>
+                <code className="text-white">git clone https://byteland/future</code>
+              </div>
+              <div className="flex">
+                <span className="text-brand-purple mr-2 select-none">$</span>
+                <code className="text-white">npm run deploy</code>
+              </div>
+              <div className="text-brand-green mt-2">
+                <span className="select-none">&gt; </span>
+                <samp className="font-bold drop-shadow-[0_0_5px_rgba(0,255,157,0.8)]">
+                  Success! Project launched 🚀
+                </samp>
+              </div>
             </div>
           </div>
 
-          {/* === ÁREA DEL LOGO (La Ciudad) === */}
-          <div className="relative w-full lg:max-w-[500px]">
-            {/* Logo de la ciudad con efectos */}
+          {/* Ciudad Holográfica */}
+          <div className="relative w-full max-w-lg z-10 group flex justify-center">
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-brand-cyan/20 blur-[60px] rounded-full"></div>
+            
             <img
               src={cityLogo}
-              alt="Byteland City Logo"
-              className="h-auto object-contain"
+              alt="Byteland Holographic City"
+              className="relative w-full h-auto object-contain drop-shadow-[0_0_25px_rgba(34,211,238,0.3)] animate-[pulse_4s_ease-in-out_infinite]"
             />
           </div>
         </div>
+        
       </div>
     </section>
   );
