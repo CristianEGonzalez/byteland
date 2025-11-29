@@ -5,6 +5,7 @@ import Project from "../components/Project.jsx";
 import FAQ from "../components/FAQ.jsx";
 import Services from "../components/Services.jsx";
 import WhyChoose from "../components/WhyChoose.jsx";
+import Footer from "../components/Footer.jsx";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <WhyChoose />
       <Project />
       <FAQ />
+      <Footer />
     </>
   );
 }
