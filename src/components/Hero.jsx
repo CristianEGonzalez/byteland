@@ -28,7 +28,7 @@ const Hero = () => {
           >
             <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
 
-            <small className="inline-block font-mono text-brand-cyan text-xs sm:text-sm mb-6 tracking-wider bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">
+            <small className="inline-block font-mono text-brand-cyan lg:text-xs text-[0.65rem] mb-6 tracking-wider bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">
               &lt; diseño - desarrollo - producción /&gt;
             </small>
 
