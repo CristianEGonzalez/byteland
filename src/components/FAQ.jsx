@@ -32,13 +32,13 @@ function FAQ() {
     >
       {/* FONDO: Imagen con superposición oscura */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: `url(${fondoFAQ})` }}
       ></div>
       {/* Gradiente para fundir la imagen con el negro de la web */}
-      <div className="absolute inset-0 z-0 bg-brand-black/70"></div>
+      <div className="absolute inset-0 bg-brand-black/70"></div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative max-w-4xl mx-auto">
         
         {/* HEADER DE SECCIÓN */}
         <header className="mb-16 text-center">
@@ -81,7 +81,7 @@ const FAQCard = ({ data }) => {
             <div className="shrink-0 hidden sm:flex">
               <div className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300
                 ${isOpen ? 'bg-brand-purple/20 border-brand-purple text-brand-purple' : 'bg-black/50 border-white/20 text-gray-500 group-hover:border-brand-purple/50'}`}>
-                <span className="font-mono font-bold">{data.id}</span>
+                <span className="font-orbitron font-bold">{data.id}</span>
               </div>
             </div>
 

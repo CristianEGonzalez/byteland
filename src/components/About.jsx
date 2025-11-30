@@ -1,4 +1,4 @@
-import Button from "./Button";
+import ContactButton from "./ContactButton";
 import cityLogo from "../assets/city.png";
 
 function About() {
@@ -56,9 +56,7 @@ function About() {
 
             {/* Botón de acción */}
             <div className="mt-10 flex w-full justify-center">
-               <div className="hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.5)] transition-all">
-                  <Button nombre="Contactanos" />
-               </div>
+              <ContactButton/>
             </div>
 
           </article>

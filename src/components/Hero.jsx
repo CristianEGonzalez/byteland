@@ -1,5 +1,6 @@
 import cityLogo from "../assets/city.png";
 import fondo from "../assets/galaxy.jpg";
+import ContactButton from "./ContactButton";
 
 const Hero = () => {
   return (
@@ -49,13 +50,9 @@ const Hero = () => {
               >
                 Ver servicios
               </a>
-
-              <a 
-                href="#contacto" 
+              <ContactButton
                 className="bg-white/5 border border-white/20 text-white font-bold py-3 px-8 rounded-xl text-center hover:bg-white/10 hover:border-brand-purple hover:text-brand-purple transition-all backdrop-blur-md"
-              >
-                Contactar
-              </a>
+              />
             </div>
           </article>
         </div>
