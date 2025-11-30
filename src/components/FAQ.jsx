@@ -1,5 +1,5 @@
 import { useState } from "react";
-import fondoFAQ from "../assets/fondoFAQ3.jpg";
+import fondoFAQ from "../assets/fondoFAQ.jpg";
 
 function FAQ() {
   const preguntas = [
@@ -36,13 +36,13 @@ function FAQ() {
         style={{ backgroundImage: `url(${fondoFAQ})` }}
       ></div>
       {/* Gradiente para fundir la imagen con el negro de la web */}
-      <div className="absolute inset-0 z-0 bg-linear-to-b from-brand-black/90 via-brand-black/80 to-brand-black"></div>
+      <div className="absolute inset-0 z-0 bg-brand-black/70"></div>
 
       <div className="relative z-10 max-w-4xl mx-auto">
         
         {/* HEADER DE SECCIÓN */}
         <header className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Preguntas <span className="text-brand-purple">Frecuentes</span>
           </h2>
           <div className="h-1 w-24 bg-brand-purple mx-auto rounded-full shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>

@@ -1,4 +1,4 @@
-import cityLogo from "../assets/BytelandCity.png";
+import cityLogo from "../assets/city.png";
 import fondo from "../assets/galaxy.jpg";
 
 const Hero = () => {
@@ -31,7 +31,7 @@ const Hero = () => {
               &lt; diseño - desarrollo - producción /&gt;
             </small>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-orbitron font-bold text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Construimos la web que tu marca <br className="hidden"/>
               <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple animate-pulse">
                  necesita

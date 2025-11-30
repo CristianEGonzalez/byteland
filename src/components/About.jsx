@@ -1,5 +1,5 @@
 import Button from "./Button";
-import cityLogo from "../assets/BytelandCity.png";
+import cityLogo from "../assets/city.png";
 
 function About() {
   return (
@@ -33,7 +33,7 @@ function About() {
           <article className="flex flex-col justify-start">
             
             <header className="mb-8">
-              <h2 className="text-4xl lg:text-5xl font-orbitron font-bold text-white mb-4">
+              <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
                 Sobre <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple">Nosotros</span>
               </h2>
               {/* Línea decorativa estilo tech */}
