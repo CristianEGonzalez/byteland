@@ -114,7 +114,7 @@ const ContactModal = ({ isOpen, onClose }) => {
   return createPortal(
     <div className="fixed inset-0 z-50 md:z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
       
-      <div className="relative w-full max-w-2xl bg-[#0A0A0F] border border-brand-purple/30 rounded-2xl shadow-[0_0_50px_rgba(168,85,247,0.15)] overflow-hidden flex flex-col max-h-[70vh] mt-20">
+      <div className="relative w-full max-w-2xl bg-[#0A0A0F] border border-brand-purple/30 rounded-2xl shadow-[0_0_50px_rgba(168,85,247,0.15)] overflow-hidden flex flex-col max-h-[75vh] mt-15">
         
         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-brand-cyan via-brand-purple to-brand-green"></div>
 
