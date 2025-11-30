@@ -19,7 +19,7 @@ const Header = () => {
     <>
       <header className="sticky top-0 z-100 w-full bg-brand-black py-3 px-4 pb-3 flex justify-between items-center border-b border-gray-900/50 font-mono">
         {/* Logo Area */}
-        <div className="flex items-center lg:text-4xl md:text-2xl sm:text-3xl tracking-tighter">
+        <div className="flex items-center lg:text-4xl md:text-2xl text-3xl tracking-tighter">
           <span className="text-cyan-400 mr-2">&gt;</span>
           <a
             href="#inicio"
