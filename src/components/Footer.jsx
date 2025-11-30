@@ -1,4 +1,4 @@
-import cityLogo from "../assets/BytelandCity.png";
+import cityLogo from "../assets/city.png";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -59,8 +59,8 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
-                <span className="text-brand-cyan">#</span> LinkedIn
+              <a href="https://t.me/byteland_ok" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
+                <span className="text-brand-cyan">#</span> Telegram
               </a>
             </li>
             <li>

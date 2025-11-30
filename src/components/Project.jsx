@@ -35,7 +35,7 @@ function Projects() {
       
       {/* Header de Sección Consistente */}
       <div className="max-w-7xl mx-auto mb-16 text-center">
-        <h2 className="text-4xl lg:text-5xl font-orbitron font-bold mb-4">
+        <h2 className="text-4xl lg:text-5xl font-bold mb-4">
           <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
             Proyectos Destacados
           </span>
@@ -83,7 +83,7 @@ function ProjectCard({ pro }) {
 
       {/* Contenido de la Tarjeta */}
       <div className="p-6 flex flex-col grow">
-        <h3 className="font-orbitron text-lg font-bold text-white mb-2 group-hover:text-brand-cyan transition-colors">
+        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-brand-cyan transition-colors">
           {pro.titulo}
         </h3>
 
@@ -91,7 +91,7 @@ function ProjectCard({ pro }) {
           {pro.descripcion}
         </p>
 
-        {/* Botón Integrado (Call To Action) */}
+        {/* Botón Integrado (Ver Demo) */}
         <a
           href={pro.link}
           target="_blank"

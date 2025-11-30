@@ -49,7 +49,7 @@ function Services() {
       <div className="max-w-7xl mx-auto">
         
         <header className="mb-16 text-center">
-          <h2 className="text-4xl lg:text-5xl font-orbitron font-bold mb-4">
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">
             <span className="bg-linear-to-r from-brand-cyan to-brand-purple bg-clip-text text-transparent">
               Servicios
             </span>
@@ -89,7 +89,7 @@ const ServicesCard = ({ servicio }) => {
           {servicio.icono}
         </div>
 
-        <h3 className="font-orbitron text-xl text-white font-bold mb-4 tracking-wide group-hover:text-brand-green transition-colors">
+        <h3 className="text-xl text-white font-bold mb-4 tracking-wide group-hover:text-brand-green transition-colors">
           {servicio.nombre}
         </h3>
 

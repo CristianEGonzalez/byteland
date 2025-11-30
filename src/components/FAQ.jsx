@@ -1,5 +1,5 @@
 import { useState } from "react";
-import fondoFAQ from "../assets/fondoFAQ3.jpg";
+import fondoFAQ from "../assets/fondoFAQ.jpg";
 
 function FAQ() {
   const preguntas = [
@@ -32,17 +32,17 @@ function FAQ() {
     >
       {/* FONDO: Imagen con superposición oscura */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: `url(${fondoFAQ})` }}
       ></div>
       {/* Gradiente para fundir la imagen con el negro de la web */}
-      <div className="absolute inset-0 z-0 bg-linear-to-b from-brand-black/90 via-brand-black/80 to-brand-black"></div>
+      <div className="absolute inset-0 bg-brand-black/70"></div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
+      <div className="relative max-w-4xl mx-auto">
         
         {/* HEADER DE SECCIÓN */}
         <header className="mb-16 text-center">
-          <h2 className="text-3xl md:text-5xl font-orbitron font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Preguntas <span className="text-brand-purple">Frecuentes</span>
           </h2>
           <div className="h-1 w-24 bg-brand-purple mx-auto rounded-full shadow-[0_0_15px_rgba(168,85,247,0.5)]"></div>
@@ -81,7 +81,7 @@ const FAQCard = ({ data }) => {
             <div className="shrink-0 hidden sm:flex">
               <div className={`w-12 h-12 rounded-full flex items-center justify-center border transition-all duration-300
                 ${isOpen ? 'bg-brand-purple/20 border-brand-purple text-brand-purple' : 'bg-black/50 border-white/20 text-gray-500 group-hover:border-brand-purple/50'}`}>
-                <span className="font-mono font-bold">{data.id}</span>
+                <span className="font-orbitron font-bold">{data.id}</span>
               </div>
             </div>
 

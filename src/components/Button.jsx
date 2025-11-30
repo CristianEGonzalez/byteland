@@ -1,17 +1,28 @@
-import React from "react";
+const Button = ({ nombre, link, onClick, className }) => {
+  const buttonClasses = className ? className :
+      `inline-block
+      bg-linear-to-r from-brand-cyan to-brand-purple 
+      font-mono text-black font-bold 
+      py-2 lg:px-8 md:px-4 sm:px-6 rounded-xl text-center 
+      hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] 
+      transition-all transform hover:scale-105
+      cursor-pointer`
 
-function Button({ nombre }) {
-  const buttonGradientClasses = `bg-gradient-to-r from-[#5AEFFF] to-[#8A2BE2]`;
-
-  return (
-    <>
-      <button
-        className={`${buttonGradientClasses} text-black font-bold py-1 px-8 rounded-lg text-sm sm:text-base hover:shadow-[0_0_20px_rgba(90,239,255,0.8)] transition-all hover:scale-[1.03] w-full sm:w-auto`}
-      >
+  // CASO A: Es un Link externo o ancla
+  if (link) {
+    return (
+      <a href={link} className={buttonClasses}>
         {nombre}
-      </button>
-    </>
+      </a>
+    );
+  }
+
+  // Botón B: (para abrir modales, etc)
+  return (
+    <button onClick={onClick} className={buttonClasses}>
+      {nombre}
+    </button>
   );
-}
+};
 
 export default Button;

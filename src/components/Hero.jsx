@@ -1,5 +1,6 @@
-import cityLogo from "../assets/BytelandCity.png";
+import cityLogo from "../assets/city.png";
 import fondo from "../assets/galaxy.jpg";
+import ContactButton from "./ContactButton";
 
 const Hero = () => {
   return (
@@ -31,7 +32,7 @@ const Hero = () => {
               &lt; diseño - desarrollo - producción /&gt;
             </small>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-orbitron font-bold text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6">
               Construimos la web que tu marca <br className="hidden"/>
               <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple animate-pulse">
                  necesita
@@ -45,17 +46,14 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#servicios"
-                className="bg-linear-to-r from-brand-cyan to-brand-purple text-black font-bold py-3 px-8 rounded-xl text-center hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all transform hover:scale-105"
+                className="bg-linear-to-r from-brand-cyan to-brand-purple text-black font-mono font-bold py-3 px-8 rounded-xl text-center hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all transform hover:scale-105"
               >
-                Ver servicios
+                VER SERVICIOS
               </a>
-
-              <a 
-                href="#contacto" 
-                className="bg-white/5 border border-white/20 text-white font-bold py-3 px-8 rounded-xl text-center hover:bg-white/10 hover:border-brand-purple hover:text-brand-purple transition-all backdrop-blur-md"
-              >
-                Contactar
-              </a>
+              <ContactButton
+                nombre="CONTACTAR"
+                className="bg-white/5 border border-white/20 text-white font-mono font-bold py-3 px-8 rounded-xl text-center hover:bg-white/10 hover:border-brand-purple hover:text-brand-purple transition-all backdrop-blur-md"
+              />
             </div>
           </article>
         </div>
