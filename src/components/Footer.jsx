@@ -78,8 +78,8 @@ function Footer() {
           &copy; {currentYear} ByteLand Development. Todos los derechos reservados.
         </p>
         <div className="flex gap-6">
-          <a href="#" className="hover:text-gray-400">Privacidad</a>
-          <a href="#" className="hover:text-gray-400">Términos</a>
+          <a href="/privacidad" className="hover:text-gray-400">Privacidad</a>
+          <a href="/terminos" className="hover:text-gray-400">Términos</a>
         </div>
       </div>
 
