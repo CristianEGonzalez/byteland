@@ -96,7 +96,7 @@ function ProjectCard({ pro }) {
           href={pro.link}
           target="_blank"
           rel="noopener noreferrer" // Seguridad obligatoria para target blank
-          className="w-full text-center py-2.5 rounded-lg font-mono text-sm font-bold 
+          className="w-full text-center py-2.5 rounded-lg font-orbitron text-sm font-bold 
                      bg-white/5 border border-white/10 text-white 
                      hover:bg-brand-purple hover:border-brand-purple hover:text-black hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]
                      transition-all duration-300 flex items-center justify-center gap-2 group/btn"
