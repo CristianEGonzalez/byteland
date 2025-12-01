@@ -26,20 +26,25 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   // Detectar país
   useEffect(() => {
-    if (isOpen) {
-      fetch("https://ipapi.co/json/")
+    if (isOpen && formData.pais === "Cargando...") {
+      // Usamos ipwhois.app que es más amigable para dev
+      fetch("https://ipwhois.app/json/")
         .then((res) => res.json())
         .then((data) => {
+          if(data.success === false) throw new Error("Fallo API");
+          
           setFormData((prev) => ({
             ...prev,
-            pais: `${data.country_name} (${data.country_code})`,
+            // Nota: Esta API usa 'country' en lugar de 'country_name'
+            pais: `${data.country} (${data.country_code})`,
           }));
         })
         .catch(() => {
-          setFormData((prev) => ({ ...prev, pais: "Ubicación desconocida" }));
+          // Si falla, fallamos en silencio y dejamos un texto genérico
+          setFormData((prev) => ({ ...prev, pais: "Ubicación no disponible" }));
         });
     }
-  }, [isOpen]);
+  }, [isOpen]); // Quitamos formData.pais de dependencias para evitar loops
 
   useEffect(() => {
     if (isOpen) {
