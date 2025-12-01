@@ -22,6 +22,7 @@ const ContactModal = ({ isOpen, onClose }) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   // Detectar país
   useEffect(() => {
@@ -49,6 +50,18 @@ const ContactModal = ({ isOpen, onClose }) => {
     return () => {
       document.body.style.overflow = 'unset';
     };
+  }, [isOpen]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsVisible(true); // Si se abre, lo mostramos ya
+    } else {
+      // Si se cierra, esperamos 300ms (lo que dura la animación) antes de desmontarlo
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
   }, [isOpen]);
 
   // Validar Email con Regex
@@ -120,13 +133,18 @@ const ContactModal = ({ isOpen, onClose }) => {
       });
   };
 
-  if (!isOpen) return null;
+  if (!isVisible) return null;
 
   return createPortal(
-    <div className="fixed inset-0 z-50 md:z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
+<div 
+      className={`fixed inset-0 z-9999 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm 
+      ${isOpen ? 'overlay-animation' : 'overlay-out'}`}
+    >
       
-      <div className="relative w-full max-w-2xl bg-[#0A0A0F] border border-brand-purple/30 rounded-2xl shadow-[0_0_50px_rgba(168,85,247,0.15)] overflow-hidden flex flex-col max-h-[75vh] mt-15">
-        
+      <div 
+        className={`relative w-full max-w-2xl bg-[#0A0A0F] border border-brand-purple/30 rounded-2xl shadow-[0_0_50px_rgba(168,85,247,0.15)] overflow-hidden flex flex-col max-h-[75vh] 
+        ${isOpen ? 'modal-animation' : 'modal-out'}`}
+      >
         <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-brand-cyan via-brand-purple to-brand-green"></div>
 
         <div className="flex justify-between items-center p-6 border-b border-white/10 bg-white/5">
