@@ -50,7 +50,7 @@ function WhyChoose() {
                   <div className="w-24 h-24 bg-brand-black border-2 border-gray-700 group-hover:border-brand-cyan rounded-full flex items-center justify-center relative transition-colors duration-300 shadow-lg">
                     {/* Anillo interior decorativo */}
                     <div className="w-20 h-20 border border-gray-800 rounded-full flex items-center justify-center group-hover:border-brand-purple/50 transition-colors">
-                      <span className="font-mono text-3xl font-bold text-white group-hover:text-brand-cyan transition-colors drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
+                      <span className="font-orbitron text-3xl font-bold text-white group-hover:text-brand-cyan transition-colors drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">
                         {item.id}
                       </span>
                     </div>
