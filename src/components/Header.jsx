@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import ContactModal from "./ContactModal";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+
+  // Inicializamos hooks
+  const location = useLocation();
+  const navigate = useNavigate();
   
   const hambugerLine = `h-1 w-6 my-1 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple transition ease transform duration-300`;
   const links = ["Servicios", "Nosotros", "Proyectos", "FAQ"];
@@ -25,6 +30,23 @@ const Header = () => {
     setContactOpen(true);
   };
 
+    //Función de Navegación Limpia
+  const handleNavClick = (e, id) => {
+    e.preventDefault(); // Evitamos el comportamiento default del <a>
+    setMenuOpen(false); // Cerramos menú si está abierto
+
+    if (location.pathname === "/") {
+      // Si ya estamos en Home, scroll directo
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Si estamos en otra página, ir a Home y luego scroll
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
+
   return (
     <>
       <header className="sticky top-0 z-150 w-full bg-brand-black py-3 px-4 pb-3 flex justify-between items-center border-b border-gray-900/50 font-orbitron">
@@ -34,6 +56,7 @@ const Header = () => {
           <span className="text-cyan-400 mr-2">&gt;</span>
           <a
             href="#inicio"
+            onClick={(e) => handleNavClick(e, "inicio")}
             className="font-orbitron font-bold bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mr-12"
           >
             ByteLand
@@ -46,6 +69,7 @@ const Header = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
+              onClick={(e) => handleNavClick(e, item.toLowerCase())}
               className="text-gray-100 hover:text-cyan-400 transition-colors duration-300 text-base mr-10"
             >
               {item}
@@ -82,7 +106,7 @@ const Header = () => {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              onClick={() => setMenuOpen(false)}
+              onClick={(e) => handleNavClick(e, item.toLowerCase())}
               className="text-gray-200 text-2xl font-light tracking-widest relative pb-1 hover:text-cyan-400 transition-all duration-300"
             >
               {item}
