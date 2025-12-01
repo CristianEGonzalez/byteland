@@ -1,14 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./Button";
-import ContactButton from "./ContactButton";
 import ContactModal from "./ContactModal";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
+  
   const hambugerLine = `h-1 w-6 my-1 rounded-full bg-linear-to-r from-brand-cyan to-brand-purple transition ease transform duration-300`;
-
   const links = ["Servicios", "Nosotros", "Proyectos", "FAQ"];
+
+  // --- Scroll lock inteligente ---
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else if (!contactOpen) {
+      // Si cerramos el menú, solo liberamos el scroll si el modal NO está abierto.
+      // Así evitamos que el Header le quite el candado al Modal.
+      document.body.style.overflow = 'unset';
+    }
+  }, [menuOpen, contactOpen]); // Escuchamos ambos estados
 
   const handleMobileContact = () => {
     setMenuOpen(false);
@@ -17,9 +27,10 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-100 w-full bg-brand-black py-3 px-4 pb-3 flex justify-between items-center border-b border-gray-900/50 font-mono">
+      <header className="sticky top-0 z-150 w-full bg-brand-black py-3 px-4 pb-3 flex justify-between items-center border-b border-gray-900/50 font-orbitron">
+        
         {/* Logo Area */}
-        <div className="flex items-center lg:text-4xl md:text-2xl text-3xl tracking-tighter">
+        <div className="relative z-50 flex items-center lg:text-4xl md:text-2xl text-3xl tracking-tighter">
           <span className="text-cyan-400 mr-2">&gt;</span>
           <a
             href="#inicio"
@@ -29,8 +40,8 @@ const Header = () => {
           </a>
         </div>
 
-        {/* Navigation Links */}
-        <nav className="hidden md:flex items-center ">
+        {/* Navigation Links (Desktop) */}
+        <nav className="hidden md:flex items-center">
           {links.map((item) => (
             <a
               key={item}
@@ -40,57 +51,51 @@ const Header = () => {
               {item}
             </a>
           ))}
-
-          {/* Presupuesto Botón */}
-          <ContactButton />
+          <Button nombre="Contactar" onClick={() => setContactOpen(true)} />
         </nav>
 
         {/* Mobile Menu Icon */}
         <button
-          className="md:hidden flex flex-col h-12 w-12 justify-center items-center group"
+          className="md:hidden flex flex-col h-12 w-12 justify-center items-center group relative z-50"
           aria-label="Abrir menú de navegación"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          <div
-            className={`${hambugerLine} ${
-              menuOpen
-                ? "rotate-45 translate-y-3 opacity-100 group-hover:opacity-100"
-                : "opacity-100 group-hover:opacity-100"
-            }`}
-          />
-          <div
-            className={`${hambugerLine} ${
-              menuOpen ? "opacity-0" : "opacity-100 group-hover:opacity-100"
-            }`}
-          />
-          <div
-            className={`${hambugerLine} ${
-              menuOpen
-                ? "-rotate-45 -translate-y-3 opacity-100 group-hover:opacity-100"
-                : "opacity-100 group-hover:opacity-100"
-            }`}
-          />
+          <div className={`${hambugerLine} ${menuOpen ? "rotate-45 translate-y-3 opacity-100" : "opacity-100"}`} />
+          <div className={`${hambugerLine} ${menuOpen ? "opacity-0" : "opacity-100"}`} />
+          <div className={`${hambugerLine} ${menuOpen ? "-rotate-45 -translate-y-3 opacity-100" : "opacity-100"}`} />
         </button>
 
-        {menuOpen && (
-          <div className="absolute top-full right-0 h-screen w-full backdrop-blur-xl bg-black/10 border-l border-gray-700 flex flex-col items-center gap-10 pt-14 md:hidden">
-            {links.map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                onClick={() => setMenuOpen(false)}
-                className="text-gray-200 text-xl font-light tracking-widest relative pb-1 hover:text-cyan-400 transition-all duration-300 after:absolute after:left-0 after:-bottom-1 after:w-0 after:h-px after:bg-linear-to-r from-cyan-400 to-purple-500 hover:after:w-full after:transition-all after:duration-300"
-              >
-                {item}
-              </a>
-            ))}
+        {/* --- MENÚ MÓVIL --- */}
+        <div
+          className={`
+            fixed inset-0 h-screen w-screen
+            bg-black/50 backdrop-blur-xl
+            flex flex-col items-center justify-start pt-32 gap-10 md:hidden z-40
+            transition-all duration-300 ease-in-out
+            ${menuOpen 
+              ? "translate-x-0 opacity-100 visible" 
+              : "translate-x-full opacity-0 invisible"
+            }
+          `}
+        >
+          {links.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              onClick={() => setMenuOpen(false)}
+              className="text-gray-200 text-2xl font-light tracking-widest relative pb-1 hover:text-cyan-400 transition-all duration-300"
+            >
+              {item}
+            </a>
+          ))}
 
-            <div onClick={handleMobileContact}>
-              <Button nombre="Contactar" />
-            </div>
+          <div onClick={handleMobileContact}>
+            <Button nombre="Contactar" />
           </div>
-        )}
+        </div>
+
       </header>
+
       <ContactModal
         isOpen={contactOpen}
         onClose={() => setContactOpen(false)}
