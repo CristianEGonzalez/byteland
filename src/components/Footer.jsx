@@ -64,7 +64,7 @@ function Footer() {
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/byteland.ok/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
+              <a href="https://www.instagram.com/byteland_ok/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                 <span className="text-brand-green">$</span> Instagram
               </a>
             </li>
