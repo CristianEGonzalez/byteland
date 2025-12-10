@@ -1,15 +1,58 @@
-import cityLogo from "../assets/city.png";
+import React, { useState, useEffect } from "react";
 import fondo from "../assets/galaxy.jpg";
-import ContactButton from "./ContactButton";
+import ContactButton from "./ContactButton"; // Asumo que usas este o el modal directo
 
 const Hero = () => {
+  // --- LÓGICA DEL CAROUSEL ---
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const slides = [
+    {
+      id: 1,
+      tag: "OFERTA LANZAMIENTO",
+      title: "50% OFF en tu Primera Web",
+      desc: "Digitaliza tu negocio hoy. Incluye dominio, hosting por un año y diseño responsive.",
+      color: "from-brand-cyan to-blue-600",
+      icon: "🚀",
+      link: "https://www.instagram.com/p/DR4lReUji0X/",
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },
+    {
+      id: 2,
+      tag: "TECNOLOGÍA",
+      title: "Velocidad Extrema",
+      desc: "No usamos plantillas lentas de Wordpress. Desarrollamos código a medida optimizado.",
+      color: "from-brand-purple to-pink-600",
+      icon: "⚡",
+      link: "#servicios",
+    },
+    {
+      id: 3,
+      tag: "SOPORTE PREMIUM",
+      title: "Mantenimiento 24/7",
+      desc: "Tu web nunca duerme. Monitoreo constante y actualizaciones de seguridad incluidas.",
+      color: "from-brand-green to-emerald-600",
+      icon: "🛡️",
+      link: "#servicios",
+    },
+  ];
+
+  // Autoplay (Cambia cada 5 segundos)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [slides.length]);
+
   return (
     <section
       id="inicio"
       className="relative w-full min-h-[90vh] flex items-center justify-center px-4 py-12 lg:px-8 overflow-hidden"
     >
-      {/* FONDO */}
-      <div 
+      {/* === FONDO === */}
+      <div
         className="absolute inset-0 z-0 bg-cover bg-center bg-fixed"
         style={{ backgroundImage: `url('${fondo}')` }}
       />
@@ -17,94 +60,113 @@ const Hero = () => {
 
       {/* Contenedor Principal */}
       <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-7xl w-full z-10 items-center">
-        
-        {/* Tarjeta Principal */}
-        <div className="group relative">
-          <div className="absolute -inset-1 bg-linear-to-r from-brand-cyan to-brand-purple rounded-[30px] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+        {/* === COLUMNA IZQUIERDA: Texto Principal === */}
+        <div className="text-left animate-fade-in-up">
+          <small className="inline-block font-mono text-brand-cyan text-xs sm:text-sm mb-6 tracking-wider bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">
+            &lt; diseño - desarrollo - producción /&gt;
+          </small>
 
-          <article
-            className="relative bg-gray-900/60 backdrop-blur-xl border border-white/10 rounded-[25px] 
-            p-8 lg:p-12 text-left shadow-2xl overflow-hidden"
-          >
-            <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-white/20 to-transparent"></div>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-orbitron font-bold text-white leading-tight mb-6">
+            Construimos la web que tu marca <br className="hidden lg:block" />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple animate-pulse">
+              necesita
+            </span>
+          </h1>
 
-            <small className="inline-block font-mono text-brand-cyan lg:text-xs text-[0.65rem] mb-6 tracking-wider bg-brand-cyan/10 px-3 py-1 rounded-full border border-brand-cyan/20">
-              &lt; diseño - desarrollo - producción /&gt;
-            </small>
+          <p className="text-gray-300 font-mono text-base sm:text-lg mb-10 leading-relaxed max-w-lg">
+            Confiabilidad asegurada para tu empresa. Transformamos código en
+            resultados de negocio reales.
+          </p>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl font-bold text-white leading-tight mb-6">
-              Construimos la web que tu marca <br className="hidden"/>
-              <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple animate-pulse">
-                 necesita
-              </span>
-            </h1>
-
-            <p className="text-gray-300 font-mono text-base sm:text-lg mb-10 leading-relaxed max-w-lg">
-              Confiabilidad asegurada para tu empresa. Transformamos código en resultados de negocio.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a 
-                href="#servicios"
-                className="bg-linear-to-r from-brand-cyan to-brand-purple text-black font-orbitron font-bold py-3 px-8 rounded-xl text-center hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all transform hover:scale-105"
-              >
-                Servicios
-              </a>
-              <ContactButton
-                nombre="Contacto"
-                className="bg-white/5 border border-white/20 text-white font-orbitron font-bold py-3 px-8 rounded-xl text-center hover:bg-white/10 hover:border-brand-purple hover:text-brand-purple transition-all backdrop-blur-md"
-              />
-            </div>
-          </article>
-        </div>
-
-        {/* Visuales */}
-        <div className="flex flex-col gap-12 items-center w-full mt-12 lg:mt-0">
-          
-          {/* Terminal Flotante */}
-          <div
-            role="presentation"
-            className="w-full max-w-md bg-black/80 backdrop-blur-md border border-gray-700 rounded-xl p-6 shadow-2xl font-mono text-sm text-gray-300 relative z-20 border-l-4 border-l-brand-purple"
-          >
-            <div className="flex justify-between items-center mb-4 border-b border-gray-800 pb-2">
-              <span className="text-xs text-gray-500">bash — 80x24</span>
-              <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
-                <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
-              </div>
-            </div>
-
-            <div className="space-y-3 font-mono text-xs sm:text-sm">
-              <div className="flex">
-                <span className="text-brand-purple mr-2 select-none">$</span>
-                <code className="text-white">git clone https://byteland/future</code>
-              </div>
-              <div className="flex">
-                <span className="text-brand-purple mr-2 select-none">$</span>
-                <code className="text-white">npm run deploy</code>
-              </div>
-              <div className="text-brand-green mt-2">
-                <span className="select-none">&gt; </span>
-                <samp className="font-bold drop-shadow-[0_0_5px_rgba(0,255,157,0.8)]">
-                  Success! Project launched 🚀
-                </samp>
-              </div>
-            </div>
-          </div>
-
-          {/* Ciudad Holográfica */}
-          <div className="relative w-full max-w-lg z-10 group flex justify-center">
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-brand-cyan/20 blur-[60px] rounded-full"></div>
-            
-            <img
-              src={cityLogo}
-              alt="Byteland Holographic City"
-              className="relative w-full h-auto object-contain drop-shadow-[0_0_25px_rgba(34,211,238,0.3)] animate-[pulse_4s_ease-in-out_infinite]"
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a
+              href="#servicios"
+              className="bg-linear-to-r from-brand-cyan to-brand-purple text-black font-orbitron font-bold py-3 px-8 rounded-xl text-center hover:shadow-[0_0_20px_rgba(34,211,238,0.6)] transition-all transform hover:scale-105"
+            >
+              Servicios
+            </a>
+            <ContactButton
+              nombre="Contacto"
+              className="bg-white/5 border border-white/20 text-white font-orbitron font-bold py-3 px-8 rounded-xl text-center hover:bg-white/10 hover:border-brand-purple hover:text-brand-purple transition-all backdrop-blur-md"
             />
           </div>
         </div>
-        
+
+        {/* === COLUMNA DERECHA: CAROUSEL HOLOGRÁFICO === */}
+        <div className="relative w-full h-[400px] flex items-center justify-center lg:justify-end perspective-1000">
+          {slides.map((slide, index) => (
+            <div
+              key={slide.id}
+              className={`absolute top-0 right-0 w-full max-w-md h-full transition-all duration-700 ease-in-out transform
+                ${
+                  index === currentSlide
+                    ? "opacity-100 translate-x-0 scale-100 z-20"
+                    : "opacity-0 translate-x-10 scale-95 z-0 pointer-events-none"
+                }
+              `}
+            >
+              {/* Tarjeta del Slide */}
+              <div className="relative h-full bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col justify-center overflow-hidden shadow-2xl group">
+                {/* Fondo gradiente sutil dinámico */}
+                <div
+                  className={`absolute top-0 right-0 w-64 h-64 bg-linear-to-br ${slide.color} blur-[80px] opacity-20 rounded-full group-hover:opacity-30 transition-opacity`}
+                ></div>
+
+                {/* Icono Flotante */}
+                <div className="text-6xl mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] animate-bounce-slow">
+                  {slide.icon}
+                </div>
+
+                {/* Etiqueta */}
+                <span
+                  className={`inline-block w-fit mb-4 px-3 py-1 rounded text-xs font-bold font-mono bg-linear-to-r ${slide.color} text-white`}
+                >
+                  {slide.tag}
+                </span>
+
+                {/* Título */}
+                <h3 className="text-3xl font-orbitron font-bold text-white mb-4 leading-tight">
+                  {slide.title}
+                </h3>
+
+                {/* Descripción */}
+                <p className="text-gray-300 font-mono text-sm leading-relaxed">
+                  {slide.desc}
+                </p>
+
+                {/* Call to Action pequeño */}
+                <a
+                  href={slide.link}
+                  target={slide.target || "_self"}
+                  rel={slide.rel || undefined}
+                  className="mt-8 pt-6 border-t border-white/10 flex items-center gap-2 text-brand-cyan text-sm font-bold cursor-pointer group-hover:text-white transition-colors"
+                >
+                  <span>MÁS INFORMACIÓN</span>
+                  <span className="group-hover:translate-x-2 transition-transform">
+                    →
+                  </span>
+                </a>
+              </div>
+            </div>
+          ))}
+
+          {/* INDICADORES (Puntos de control) */}
+          <div className="absolute -bottom-8 lg:bottom-0 left-0 lg:left-auto lg:right-0 flex gap-3 z-30">
+            {slides.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={`h-1 rounded-full transition-all duration-300 
+                  ${
+                    currentSlide === idx
+                      ? `w-12 bg-linear-to-r ${slides[idx].color}`
+                      : "w-4 bg-gray-700 hover:bg-gray-500"
+                  }`}
+                aria-label={`Ir al slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
