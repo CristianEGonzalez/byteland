@@ -1,8 +1,32 @@
 @import "tailwindcss";
 
-/* Fuentes: Poppins para texto y Fira Code para títulos/código */
-@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
-@import url("https://www.google.com/search?q=https://fonts.googleapis.com/css2%3Ffamily%3DFira%2BCode:wght%40300%3B400%3B500%3B600%3B700%26family%3DPoppins:wght%40300%3B400%3B600%3B700%26display%3Dswap");
+/* Orbitron Font */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url('/fonts/Orbitron-Variable.ttf') format('truetype');
+}
+
+/* Fira Code Font */
+@font-face {
+  font-family: 'Fira Code';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/FiraCode-Variable.ttf') format('truetype');
+}
+
+/* Outfit font */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/fonts/Outfit-Variable.ttf') format('truetype');
+}
+
 
 /* Colores y texto */
 @theme {
@@ -12,14 +36,14 @@
   --color-brand-green: #39ff9b;
   --color-text-subtitle: #e0e0e0;
 
-  --font-mono: "Fira Code", monospace;
-  --font-sans: "Poppins", sans-serif;
   --font-orbitron: "Orbitron", sans-serif;
+  --font-mono: "Fira Code", monospace;
+  --font-sans: "Outfit", sans-serif;
 }
 
 body {
   /* Fondo y fuente de cuerpo Poppins */
-  @apply bg-brand-black text-white font-sans;
+  @apply bg-brand-black text-white;
 }
 
 /* Fira Code en los títulos y código */
