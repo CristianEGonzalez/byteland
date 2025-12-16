@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import ContactModal from '../components/ContactModal';
 import ContactButton from '../components/ContactButton';
 
 const Promo = () => {
@@ -46,15 +45,15 @@ const Promo = () => {
 
             {/* Precio */}
             <div className="bg-white/5 border border-white/10 rounded-xl p-6 backdrop-blur-md">
-              <p className="font-mono text-gray-400 text-sm mb-1">Precio Único Final:</p>
-              <div className="flex items-baseline gap-4">
-                <span className="text-5xl md:text-6xl font-mono font-bold text-white">$150.000</span>
+              <p className="font-mono text-center text-gray-400 text-sm mb-1">Precio Único Final:</p>
+              <div className="flex flex-col items-center justify-center">
                 <span className="text-xl text-gray-500 font-mono line-through decoration-brand-purple">$300.000</span>
+                <span className="text-5xl md:text-6xl font-mono font-bold text-white">$150.000</span>
+                <p className="text-brand-green font-mono text-xs mt-3 flex items-center gap-2">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                  Listo para vender antes del 31/12
+                </p>
               </div>
-              <p className="text-brand-green font-mono text-xs mt-3 flex items-center gap-2">
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                Listo para vender antes del 31/12
-              </p>
             </div>
 
             {/* Botón Contacto */}
