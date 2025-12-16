@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import fondo from "../assets/galaxy.jpg";
-import ContactButton from "./ContactButton"; // Asumo que usas este o el modal directo
+import ContactButton from "./ContactButton";
 
 const Hero = () => {
   // --- LÓGICA DEL CAROUSEL ---
@@ -14,9 +14,7 @@ const Hero = () => {
       desc: "Digitaliza tu negocio hoy. Incluye dominio, hosting por un año y diseño responsive.",
       color: "from-brand-cyan to-blue-600",
       icon: "🚀",
-      link: "https://www.instagram.com/p/DR4lReUji0X/",
-      target: "_blank",
-      rel: "noopener noreferrer",
+      link: "/promo",
     },
     {
       id: 2,
@@ -36,9 +34,22 @@ const Hero = () => {
       icon: "🛡️",
       link: "#servicios",
     },
+    
+    /* EJEMPLO DE SLIDE CON LINK EXTERNO
+    {
+      id: 4,
+      tag: "OFERTA LANZAMIENTO",
+      title: "50% OFF en tu Primera Web",
+      desc: "Digitaliza tu negocio hoy. Incluye dominio, hosting por un año y diseño responsive.",
+      color: "from-amber-300 to-yellow-300",
+      icon: "🚀",
+      link: "https://www.instagram.com/p/DR4lReUji0X/",
+      target: "_blank",
+      rel: "noopener noreferrer",
+    },*/
   ];
 
-  // Autoplay (Cambia cada 5 segundos)
+  // Autoplay Slides (Cambia cada 5 segundos)
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -49,7 +60,7 @@ const Hero = () => {
   return (
     <section
       id="inicio"
-      className="relative w-full min-h-[90vh] flex items-center justify-center px-4 py-12 lg:px-8 overflow-hidden"
+      className="relative w-full min-h-[90vh] flex items-center justify-center px-4 py-12 lg:px-8 overflow-hidden "
     >
       {/* === FONDO === */}
       <div
