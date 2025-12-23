@@ -11,7 +11,7 @@ function Terms() {
       
       <div className="fixed inset-0 z-0 pointer-events-none opacity-40 bg-[url('/assets/stars.png')] bg-repeat"></div>
 
-      <main className="relative z-10 grow py-24 px-4 sm:px-6 lg:px-8">
+      <main className="relative z-10 grow py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           
           <header className="mb-12 border-b border-white/10 pb-8">
