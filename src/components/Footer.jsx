@@ -1,7 +1,28 @@
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import cityLogo from "../assets/city.png";
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleScrollNav = (e, id) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      navigate("/");
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  };
+
+  const handleScrollTop = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer className="relative w-full bg-[#020202] pt-16 pb-8 px-4 sm:px-6 lg:px-8 border-t border-white/10 overflow-hidden">
@@ -13,12 +34,13 @@ function Footer() {
         
         {/* Marca y Bio */}
         <div className="md:col-span-2 space-y-4">
-          <a href="#inicio" className="flex items-center gap-2 group w-fit">
-            <img src={cityLogo} alt="Logo Byteland" className="w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity" />
+          {/* Logo: Usamos Link nativo + onClick para el caso especial del Home */}
+          <Link to="/" onClick={handleScrollTop} className="flex items-center gap-2 group w-fit cursor-pointer">
+            <img src={cityLogo} alt="Logo Byteland" className="w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity rounded-full" />
             <span className="text-2xl font-orbitron font-bold text-white tracking-wider group-hover:text-brand-cyan transition-colors">
               ByteLand
             </span>
-          </a>
+          </Link>
           <p className="text-gray-400 font-mono text-sm max-w-sm leading-relaxed">
             Transformamos ideas complejas en experiencias digitales simples, potentes y memorables.
             <br />
@@ -36,8 +58,9 @@ function Footer() {
               {['Inicio', 'Servicios', 'Proyectos', 'Nosotros'].map((item) => (
                 <li key={item}>
                   <a 
-                    href={`#${item.toLowerCase()}`} 
-                    className="hover:text-brand-green hover:translate-x-2 transition-all duration-300 block w-fit"
+                    href={`#${item.toLowerCase()}`}
+                    onClick={(e) => handleScrollNav(e, item.toLowerCase())}
+                    className="hover:text-brand-green hover:translate-x-2 transition-all duration-300 block w-fit cursor-pointer"
                   >
                     &gt; {item}
                   </a>
@@ -78,8 +101,8 @@ function Footer() {
           &copy; {currentYear} ByteLand Development. Todos los derechos reservados.
         </p>
         <div className="flex gap-6">
-          <a href="/privacidad" className="hover:text-gray-400">Privacidad</a>
-          <a href="/terminos" className="hover:text-gray-400">Términos</a>
+          <Link to="/privacidad" className="hover:text-gray-400">Privacidad</Link>
+          <Link to="/terminos" className="hover:text-gray-400">Términos</Link>
         </div>
       </div>
 
