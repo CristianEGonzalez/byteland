@@ -8,7 +8,7 @@ const Promo = () => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center py-20 px-4 sm:px-6 lg:px-8">
+    <div className="w-full flex justify-center py-12 px-4 sm:px-6 lg:px-8">
       
       {/* Contenedor Principal (Glass Card Gigante) */}
       <div className="relative w-full max-w-5xl bg-brand-black/60 backdrop-blur-xl border border-brand-purple/30 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(138,43,226,0.15)]">
