@@ -23,7 +23,7 @@ function Projects() {
       titulo: "Sitio Web - La Grafi-k",
       descripcion: "Lading Page con catálogo interactivo y consultas detalladas automatizadas.",
       imagen: laGrafiK,
-      link: "#",
+      link: "https://lagrafik.com",
       tags: ["Catálogo","Consultas Detalladas"]
     },
     {
