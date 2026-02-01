@@ -25,7 +25,7 @@ Para garantizar una experiencia de usuario fluida y de alta velocidad, utilizamo
 
 1.  Cloná este repositorio:
     ```bash
-    git clone [https://github.com/tu-usuario/byteland.git](https://github.com/tu-usuario/byteland.git)
+    git clone https://github.com/CristianEGonzalez/byteland.git
     ```
 2.  Instalá las dependencias:
     ```bash
