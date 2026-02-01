@@ -1,6 +1,6 @@
 # 🌐 Byteland - Tu lugar en el mundo digital
 
-![Byteland Banner](https://www.byteland.com.ar/logo.png) **Byteland** es el sitio web oficial de nuestra agencia de desarrollo web y soluciones digitales. Este proyecto funciona como nuestra base de operaciones y muestra de capacidades técnicas, fusionando un rendimiento optimizado con una identidad visual disruptiva.
+**Byteland** es el sitio web oficial de nuestra agencia de desarrollo web y soluciones digitales. Este proyecto funciona como nuestra base de operaciones y muestra de capacidades técnicas, fusionando un rendimiento optimizado con una identidad visual disruptiva.
 
 ## 🚀 Concepto y Estética
 La identidad de Byteland se define por una estética **Cyberpunk / Glassmorphism** que utiliza la tipografía **Orbitron**. El diseño se centra en:
