@@ -180,7 +180,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
             {/* Mail */}
             <a
-              href="mailto:contacto@byteland.com"
+              href="mailto:contacto@byteland.com.ar"
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan/20 hover:border-brand-cyan hover:text-brand-cyan hover:scale-110 transition-all duration-300 group"
               title="Enviar Email"
             >
