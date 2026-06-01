@@ -28,7 +28,7 @@ function Terms() {
             <section>
               <h2 className="text-xl font-orbitron text-brand-purple mb-4">1. Aceptación de los términos</h2>
               <p>
-                Al acceder y utilizar el sitio web de <strong>ByteLand</strong>, aceptas cumplir con estos términos y condiciones. 
+                Al acceder y utilizar el sitio web de <strong>EnterCode</strong>, aceptas cumplir con estos términos y condiciones. 
                 Si no estás de acuerdo con alguna parte de estos términos, te recomendamos no utilizar nuestros servicios.
               </p>
             </section>
@@ -36,7 +36,7 @@ function Terms() {
             <section>
               <h2 className="text-xl font-orbitron text-brand-purple mb-4">2. Servicios</h2>
               <p>
-                ByteLand ofrece servicios de desarrollo de aplicaciones y sitios web, diseño UI/UX y consultoría digital. 
+                EnterCode ofrece servicios de desarrollo de aplicaciones y sitios web, diseño UI/UX y consultoría digital. 
                 Nos reservamos el derecho de modificar o discontinuar cualquier servicio sin previo aviso, 
                 aunque siempre intentaremos notificar a nuestros clientes activos.
               </p>
@@ -45,15 +45,15 @@ function Terms() {
             <section>
               <h2 className="text-xl font-orbitron text-brand-purple mb-4">3. Propiedad Intelectual</h2>
               <p>
-                Todo el contenido, marcas, logos (incluido el logo de ByteLand) y código fuente de este sitio 
-                son propiedad exclusiva de ByteLand o de sus respectivos dueños, y están protegidos por leyes de propiedad intelectual.
+                Todo el contenido, marcas, logos (incluido el logo de EnterCode) y código fuente de este sitio 
+                son propiedad exclusiva de EnterCode o de sus respectivos dueños, y están protegidos por leyes de propiedad intelectual.
               </p>
             </section>
 
             <section>
               <h2 className="text-xl font-orbitron text-brand-purple mb-4">4. Limitación de Responsabilidad</h2>
               <p>
-                ByteLand no se hace responsable de daños directos, indirectos o incidentales que puedan surgir 
+                EnterCode no se hace responsable de daños directos, indirectos o incidentales que puedan surgir 
                 del uso o la imposibilidad de uso de nuestro sitio web o servicios.
               </p>
             </section>

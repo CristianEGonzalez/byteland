@@ -167,7 +167,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           <div className="flex justify-center gap-6">
             {/* Instagram */}
             <a
-              href="https://instagram.com/byteland_ok"
+              href="https://instagram.com/entercode_ok"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-400/20 hover:border-pink-400 hover:text-pink-400 hover:scale-110 transition-all duration-300 group"
@@ -180,7 +180,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
             {/* Mail */}
             <a
-              href="mailto:contacto@byteland.com.ar"
+              href="mailto:entercode.contacto@gmail.com" // Reemplazar mail de Byteland por el de EnterCode
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan/20 hover:border-brand-cyan hover:text-brand-cyan hover:scale-110 transition-all duration-300 group"
               title="Enviar Email"
             >
@@ -201,7 +201,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
             {/* Telegram */}
             <a
-              href="https://t.me/byteland_ok"
+              href="https://t.me/entercode_ok"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#229ED9]/20 hover:border-[#229ED9] hover:text-[#229ED9] hover:scale-110 transition-all duration-300 group"
@@ -240,7 +240,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 ¡Mensaje Transmitido!
               </h3>
               <p className="text-gray-400">
-                El equipo de ByteLand ha recibido tu señal.
+                El equipo de EnterCode ha recibido tu señal.
               </p>
             </div>
           ) : (

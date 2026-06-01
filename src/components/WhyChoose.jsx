@@ -24,7 +24,7 @@ function WhyChoose() {
         {/* Título de la sección */}
         <header className="text-center mb-20">
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-            ¿Por qué elegir <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple">ByteLand?</span>
+            ¿Por qué elegir <span className="text-transparent bg-clip-text bg-linear-to-r from-brand-cyan to-brand-purple">EnterCode?</span>
           </h2>
           <div className="h-1 w-24 bg-brand-cyan mx-auto rounded-full shadow-[0_0_15px_rgba(34,211,238,0.5)]"></div>
         </header>

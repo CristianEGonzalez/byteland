@@ -112,7 +112,7 @@ function Projects() {
           <span className="text-brand-cyan animate-pulse">_</span>
         </h2>
         <p className="text-gray-400 font-mono text-sm max-w-2xl mx-auto">
-          // Casos de éxito y soluciones implementadas por ByteLand
+          // Casos de éxito y soluciones implementadas por EnterCode
         </p>
       </div>
 

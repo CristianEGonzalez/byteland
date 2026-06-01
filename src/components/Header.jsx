@@ -55,7 +55,7 @@ const Header = () => {
             onClick={(e) => handleNavClick(e, "inicio")}
             className="font-orbitron font-bold bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mr-12"
           >
-            ByteLand
+            EnterCode
           </Link>
         </div>
 
