@@ -49,13 +49,12 @@ const Header = () => {
         
         {/* Logo Area */}
         <div className="relative z-50 flex items-center lg:text-4xl md:text-2xl text-3xl tracking-tighter">
-          <span className="text-cyan-400 mr-2">&gt;</span>
-          <Link
-            to="/"
-            onClick={(e) => handleNavClick(e, "inicio")}
-            className="font-orbitron font-bold bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mr-12"
-          >
-            EnterCode
+          <span className="font-bold bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent mr-2">
+            &gt;
+          </span>
+          <Link to="/" onClick={(e) => handleNavClick(e, "inicio")}
+            className="font-orbitron font-bold mr-12">
+            Enter<span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Code</span>
           </Link>
         </div>
 
