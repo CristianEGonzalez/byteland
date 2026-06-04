@@ -3,9 +3,9 @@ import emailjs from "@emailjs/browser";
 import { createPortal } from "react-dom";
 
 // VALORES DE LA CUENTA DE EMAILJS (REMPLAZAR Byteland POR LOS DE ENTERCODE)
-const YOUR_SERVICE_ID = "service_kw9o14k";
-const YOUR_TEMPLATE_ID = "template_2okjz7s";
-const YOUR_PUBLIC_KEY = "1KgMV8Iwho8szM4jL";
+const YOUR_SERVICE_ID = "service_b19m4ps";
+const YOUR_TEMPLATE_ID = "template_tikxykq";
+const YOUR_PUBLIC_KEY = "Vh0IbO4_3AIDfjE5o";
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
