@@ -77,7 +77,6 @@ function Footer() {
           </h3>
           <ul className="space-y-3 font-mono text-sm text-gray-400 pl-3">
             <li>
-              {/* Reemplazar mail de byteland por el de EnterCode */}
               <a href="mailto:entercode.contacto@gmail.com" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                 <span className="text-brand-purple">@</span> Email
               </a>

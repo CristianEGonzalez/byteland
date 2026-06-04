@@ -71,7 +71,6 @@ function Privacy() {
               <p>
                 Si tienes dudas sobre nuestra política de privacidad, contáctanos en: 
                 <a href="mailto:entercode.contacto@gmail.com" className="text-brand-purple hover:text-brand-cyan ml-2 transition-colors">
-                  {/* Reemplazar mail de Byteland por el de EnterCode */}
                   entercode.contacto@gmail.com
                 </a>
               </p>

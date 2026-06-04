@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { createPortal } from "react-dom";
 
-// VALORES DE LA CUENTA DE EMAILJS
+// VALORES DE LA CUENTA DE EMAILJS (REMPLAZAR Byteland POR LOS DE ENTERCODE)
 const YOUR_SERVICE_ID = "service_kw9o14k";
 const YOUR_TEMPLATE_ID = "template_2okjz7s";
 const YOUR_PUBLIC_KEY = "1KgMV8Iwho8szM4jL";
@@ -180,7 +180,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
             {/* Mail */}
             <a
-              href="mailto:entercode.contacto@gmail.com" // Reemplazar mail de Byteland por el de EnterCode
+              href="mailto:entercode.contacto@gmail.com"
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan/20 hover:border-brand-cyan hover:text-brand-cyan hover:scale-110 transition-all duration-300 group"
               title="Enviar Email"
             >
