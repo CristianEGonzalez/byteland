@@ -31,7 +31,7 @@ function Privacy() {
             <section>
               <h2 className="text-xl font-orbitron text-brand-cyan mb-4">1. Introducción</h2>
               <p>
-                En <strong>ByteLand</strong>, nos tomamos muy en serio la privacidad de tus datos. 
+                En <strong>EnterCode</strong>, nos tomamos muy en serio la privacidad de tus datos. 
                 Esta política describe cómo recopilamos, usamos y protegemos tu información personal 
                 cuando visitas nuestro sitio web o utilizas nuestros servicios digitales.
               </p>
@@ -70,8 +70,8 @@ function Privacy() {
               <h2 className="text-xl font-orbitron text-brand-cyan mb-4">5. Contacto</h2>
               <p>
                 Si tienes dudas sobre nuestra política de privacidad, contáctanos en: 
-                <a href="mailto:legal@byteland.com" className="text-brand-purple hover:text-brand-cyan ml-2 transition-colors">
-                  contacto@byteland.com
+                <a href="mailto:entercode.contacto@gmail.com" className="text-brand-purple hover:text-brand-cyan ml-2 transition-colors">
+                  entercode.contacto@gmail.com
                 </a>
               </p>
             </section>

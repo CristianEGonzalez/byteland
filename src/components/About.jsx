@@ -1,5 +1,5 @@
 import ContactButton from "./ContactButton";
-import cityLogo from "../assets/city.png";
+import logo from "../assets/logo.png";
 
 function About() {
   return (
@@ -22,8 +22,8 @@ function About() {
               <div className="absolute inset-0 bg-brand-cyan/20 blur-3xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-500"></div>
               
               <img
-                src={cityLogo}
-                alt="Ilustración de la ciudad digital de Byteland"
+                src={logo}
+                alt="Logo de EnterCode"
                 className="relative h-auto w-full max-w-md object-contain drop-shadow-[0_0_15px_rgba(34,211,238,0.3)] transform transition-transform duration-700 group-hover:scale-105"
               />
             </div>
@@ -43,7 +43,7 @@ function About() {
             {/* Texto con mejor legibilidad y fuente mono */}
             <div className="space-y-6 font-mono text-gray-300 text-lg leading-relaxed">
               <p>
-                En <strong className="text-white">ByteLand</strong> somos un equipo de desarrolladores y diseñadores
+                En <strong className="text-white">EnterCode</strong> somos un equipo de desarrolladores y diseñadores
                 profesionales con una visión clara: <span className="text-brand-cyan">transformar ideas en experiencias digitales impactantes.</span>
               </p>
               

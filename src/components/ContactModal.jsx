@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { createPortal } from "react-dom";
 
-// VALORES DE LA CUENTA DE EMAILJS
-const YOUR_SERVICE_ID = "service_kw9o14k";
-const YOUR_TEMPLATE_ID = "template_2okjz7s";
-const YOUR_PUBLIC_KEY = "1KgMV8Iwho8szM4jL";
+// VALORES DE LA CUENTA DE EMAILJS (REMPLAZAR Byteland POR LOS DE ENTERCODE)
+const YOUR_SERVICE_ID = "service_b19m4ps";
+const YOUR_TEMPLATE_ID = "template_tikxykq";
+const YOUR_PUBLIC_KEY = "Vh0IbO4_3AIDfjE5o";
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -167,7 +167,7 @@ const ContactModal = ({ isOpen, onClose }) => {
           <div className="flex justify-center gap-6">
             {/* Instagram */}
             <a
-              href="https://instagram.com/byteland_ok"
+              href="https://instagram.com/entercode_ok"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-pink-400/20 hover:border-pink-400 hover:text-pink-400 hover:scale-110 transition-all duration-300 group"
@@ -180,7 +180,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
             {/* Mail */}
             <a
-              href="mailto:contacto@byteland.com.ar"
+              href="mailto:entercode.contacto@gmail.com"
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-brand-cyan/20 hover:border-brand-cyan hover:text-brand-cyan hover:scale-110 transition-all duration-300 group"
               title="Enviar Email"
             >
@@ -201,7 +201,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
             {/* Telegram */}
             <a
-              href="https://t.me/byteland_ok"
+              href="https://t.me/entercode_ok"
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-[#229ED9]/20 hover:border-[#229ED9] hover:text-[#229ED9] hover:scale-110 transition-all duration-300 group"
@@ -240,7 +240,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                 ¡Mensaje Transmitido!
               </h3>
               <p className="text-gray-400">
-                El equipo de ByteLand ha recibido tu señal.
+                El equipo de EnterCode ha recibido tu señal.
               </p>
             </div>
           ) : (
