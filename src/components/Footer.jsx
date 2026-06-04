@@ -36,9 +36,9 @@ function Footer() {
         <div className="md:col-span-2 space-y-4">
           {/* Logo: Usamos Link nativo + onClick para el caso especial del Home */}
           <Link to="/" onClick={handleScrollTop} className="flex items-center gap-2 group w-fit cursor-pointer">
-            <img src={cityLogo} alt="Logo Byteland" className="w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity rounded-full" />
+            <img src={cityLogo} alt="Logo EnterCode" className="w-8 h-8 opacity-80 group-hover:opacity-100 transition-opacity rounded-full" />
             <span className="text-2xl font-orbitron font-bold text-white tracking-wider group-hover:text-brand-cyan transition-colors">
-              ByteLand
+              EnterCode
             </span>
           </Link>
           <p className="text-gray-400 font-mono text-sm max-w-sm leading-relaxed">
@@ -77,17 +77,17 @@ function Footer() {
           </h3>
           <ul className="space-y-3 font-mono text-sm text-gray-400 pl-3">
             <li>
-              <a href="mailto:contacto@byteland.com" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
+              <a href="mailto:entercode.contacto@gmail.com" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                 <span className="text-brand-purple">@</span> Email
               </a>
             </li>
             <li>
-              <a href="https://t.me/byteland_ok" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
+              <a href="https://t.me/entercode_ok" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                 <span className="text-brand-cyan">#</span> Telegram
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/byteland_ok/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
+              <a href="https://www.instagram.com/entercode_ok/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                 <span className="text-brand-green">$</span> Instagram
               </a>
             </li>
@@ -98,7 +98,7 @@ function Footer() {
       {/* COPYRIGHT */}
       <div className="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-mono text-gray-600">
         <p>
-          &copy; {currentYear} ByteLand Development. Todos los derechos reservados.
+          &copy; {currentYear} EnterCode Development. Todos los derechos reservados.
         </p>
         <div className="flex gap-6">
           <Link to="/privacidad" className="hover:text-gray-400">Privacidad</Link>
