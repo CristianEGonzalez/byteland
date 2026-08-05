@@ -3,47 +3,28 @@ import { useState, useEffect } from 'react';
 const SlidesCarrousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-    const slides = [
+  const slides = [
     {
       id: 1,
-      tag: "OFERTA LANZAMIENTO",
-      title: "50% OFF en tu Primera Web",
-      desc: "Digitaliza tu negocio hoy. Incluye dominio, hosting por un año y diseño responsive.",
-      color: "from-brand-cyan to-blue-600",
-      icon: "🚀",
+      tag: "AUTOMATIZACIÓN // 01",
+      title: "Piloto Automático",
+      desc: "Sistemas inteligentes que capturan mensajes, responden consultas y optimizan conversiones de forma continua.",
       link: "/promo",
     },
     {
       id: 2,
-      tag: "TECNOLOGÍA",
+      tag: "INGENIERÍA // 02",
       title: "Velocidad Extrema",
-      desc: "No usamos plantillas lentas de Wordpress. Desarrollamos código a medida optimizado.",
-      color: "from-brand-purple to-pink-600",
-      icon: "⚡",
+      desc: "Desarrollo a medida sin plantillas lentas. Rendimiento optimizado al milisegundo para máxima retención.",
       link: "#servicios",
     },
     {
       id: 3,
-      tag: "SOPORTE PREMIUM",
-      title: "Mantenimiento 24/7",
-      desc: "Tu web nunca duerme. Monitoreo constante y actualizaciones de seguridad incluidas.",
-      color: "from-brand-green to-emerald-600",
-      icon: "🛡️",
+      tag: "SEGURIDAD // 03",
+      title: "Soporte Proactivo",
+      desc: "Infraestructura robusta con monitoreo constante, actualizaciones de seguridad y alta disponibilidad.",
       link: "#servicios",
     },
-    
-    /* EJEMPLO DE SLIDE CON LINK EXTERNO
-    {
-      id: 4,
-      tag: "OFERTA LANZAMIENTO",
-      title: "50% OFF en tu Primera Web",
-      desc: "Digitaliza tu negocio hoy. Incluye dominio, hosting por un año y diseño responsive.",
-      color: "from-amber-300 to-yellow-300",
-      icon: "🚀",
-      link: "https://www.instagram.com/p/DR4lReUji0X/",
-      target: "_blank",
-      rel: "noopener noreferrer",
-    },*/
   ];
 
   // Autoplay
@@ -55,69 +36,71 @@ const SlidesCarrousel = () => {
   }, [slides.length]);
 
   return (
-    <div className="relative w-full h-[400px] flex items-center justify-center lg:justify-end perspective-1000">
+    <div className="relative w-full h-[320px] flex flex-col justify-between">
       
-      {slides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute top-0 right-0 w-full max-w-md h-full transition-all duration-700 ease-in-out transform
-            ${index === currentSlide 
-              ? "opacity-100 translate-x-0 scale-100 z-20" 
-              : "opacity-0 translate-x-10 scale-95 z-0 pointer-events-none"
-            }
-          `}
-        >
-          {/* Tarjeta del Slide */}
-          <div className="relative h-full bg-gray-900/40 backdrop-blur-xl border border-white/10 rounded-3xl p-8 flex flex-col justify-center overflow-hidden shadow-2xl group">
-            
-            {/* Fondo gradiente sutil dinámico */}
-            <div className={`absolute top-0 right-0 w-64 h-64 bg-linear-to-br ${slide.color} blur-[80px] opacity-20 rounded-full group-hover:opacity-30 transition-opacity`}></div>
+      {/* Contenedor de Slides */}
+      <div className="relative w-full h-[260px] overflow-hidden">
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 w-full h-full transition-all duration-500 ease-out transform
+              ${index === currentSlide 
+                ? "opacity-100 translate-y-0 scale-100 z-10 pointer-events-auto" 
+                : "opacity-0 translate-y-4 scale-95 z-0 pointer-events-none"
+              }
+            `}
+          >
+            {/* Tarjeta Minimalista Pro */}
+            <div className="h-full flex flex-col justify-between p-6 bg-white/[0.01] border border-white/5 rounded-xl backdrop-blur-xl relative overflow-hidden group">
+              
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500/10 blur-[60px] rounded-full pointer-events-none transition-opacity duration-500 group-hover:opacity-100 opacity-40" />
 
-            {/* Icono Flotante */}
-            <div className="text-6xl mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] animate-bounce-slow">
-              {slide.icon}
+              <div>
+                {/* Etiqueta Técnica */}
+                <div className="flex items-center justify-between mb-4">
+                  <span className="font-mono text-[10px] tracking-widest uppercase text-cyan-400 bg-cyan-950/30 px-2.5 py-1 rounded border border-cyan-500/20">
+                    {slide.tag}
+                  </span>
+                  <span className="font-mono text-xs text-gray-600">0{slide.id} / 03</span>
+                </div>
+
+                {/* Título */}
+                <h3 className="text-xl font-orbitron font-medium text-white tracking-tight mb-2">
+                  {slide.title}
+                </h3>
+
+                {/* Descripción */}
+                <p className="text-gray-400 font-sans text-xs sm:text-sm font-light leading-relaxed">
+                  {slide.desc}
+                </p>
+              </div>
+
+              {/* Enlace / Acción Interna */}
+              <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between">
+                <a 
+                  href={slide.link}
+                  className="inline-flex items-center gap-2 text-xs font-mono tracking-wider text-gray-300 hover:text-cyan-400 transition-colors group/link"
+                >
+                  <span className="uppercase">Ver especificaciones</span>
+                  <span className="group-hover/link:translate-x-1 transition-transform text-cyan-400">→</span>
+                </a>
+              </div>
+
             </div>
-
-            {/* Etiqueta */}
-            <span className={`inline-block w-fit mb-4 px-3 py-1 rounded text-xs font-bold font-mono bg-linear-to-r ${slide.color} text-white`}>
-              {slide.tag}
-            </span>
-
-            {/* Título */}
-            <h3 className="text-3xl font-orbitron font-bold text-white mb-4 leading-tight">
-              {slide.title}
-            </h3>
-
-            {/* Descripción */}
-            <p className="text-gray-300 font-mono text-sm leading-relaxed">
-              {slide.desc}
-            </p>
-
-            {/* Call to Action pequeño */}
-            <a 
-              href={slide.link}
-              target={slide.target || "_self"}
-              rel={slide.rel || undefined}
-              className="mt-8 pt-6 border-t border-white/10 flex items-center gap-2 text-brand-cyan text-sm font-bold cursor-pointer group-hover:text-white transition-colors w-fit"
-            >
-              <span>MÁS INFORMACIÓN</span>
-              <span className="group-hover:translate-x-2 transition-transform">→</span>
-            </a>
-
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
 
-      {/* INDICADORES (Puntos de control) */}
-      <div className="absolute -bottom-8 lg:bottom-0 left-0 lg:left-auto lg:right-0 flex gap-3 z-30">
+      {/* INDICADORES */}
+      <div className="flex items-center gap-2 pt-2">
         {slides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrentSlide(idx)}
             className={`h-1 rounded-full transition-all duration-300 
               ${currentSlide === idx 
-                ? `w-12 bg-linear-to-r ${slides[idx].color}` 
-                : "w-4 bg-gray-700 hover:bg-gray-500"
+                ? "w-8 bg-cyan-400 shadow-[0_0_8px_rgba(34,211,238,0.6)]" 
+                : "w-3 bg-white/10 hover:bg-white/20"
               }`}
             aria-label={`Ir al slide ${idx + 1}`}
           />
