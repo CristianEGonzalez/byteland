@@ -6,12 +6,13 @@ const SlidesCarrousel = () => {
     const slides = [
     {
       id: 1,
-      tag: "OFERTA LANZAMIENTO",
-      title: "50% OFF en tu Primera Web",
-      desc: "Digitaliza tu negocio hoy. Incluye dominio, hosting por un año y diseño responsive.",
+      tag: "AUTOMATIZACIÓN",
+      title: "Digitaliza tu negocio",
+      desc: "Ofrecé un catálogo de productos en línea y recibí consultas detalladas y automatizadas",
       color: "from-brand-cyan to-blue-600",
       icon: "🚀",
-      link: "/promo",
+      // link: "/promo", Vieja página de promoción.
+      link: "#servicios",
     },
     {
       id: 2,
